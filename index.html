@@ -1,1 +1,804 @@
-<h1>Hello, world</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="lang-en">
+  <head>
+  <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-a6706952ebb4695212a",applicationID:"838612098"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script type="text/javascript" src="/modules/contrib/ln_datalayer/js/isMobile.min.js"></script>
+<script type="text/javascript" src="/modules/contrib/ln_datalayer/js/ln_datalayer.js"></script>
+<script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"siteName":"Maggi","event":"fireTags","pageInformation":{"pageCategory":"home_page","pageName":"Home Page","pageType":"home_page","previousPageName":"","CookingCourseBookings":""},"siteInformation":{"zone":"EUR","country":"India","business":"Food","brand":"Maggi","language":"English","technology":"Drupal","properties":"eCommerce","siteName":"Maggi","site":"","market":"SAR","optin":""},"entityInformation":{"entityName":"","entityCategory":""},"userInformation":{"deviceType":"","userID":"","gaClientID":""}});</script>
+<link rel="canonical" href="https://www.maggi.in/" />
+<link rel="shortlink" href="https://www.maggi.in/" />
+<meta name="description" content="Discover exciting MAGGI Noodle Recipes with Egg, Cheese, Paneer &amp; Chicken and a wide variety of Quick &amp; Easy Lunch, Dinner, Breakfast and Snack Recipes by MAGGI®!" />
+<meta name="facebook-domain-verification" content="lrugbx7gm37xuhvnvrgxkf9sjgxrf2" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "name": "Maggi",
+            "sameAs": [
+                "https://www.facebook.com/MeriMaggiIndia/",
+                "https://www.youtube.com/user/MeriMAGGI/featured/",
+                "https://www.instagram.com/maggiindia/",
+                "https://twitter.com/MaggiIndia/"
+            ],
+            "url": "https://www.maggi.in/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.maggi.in/sites/default/files/maggi_logo_png_0.png"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "url": "https://www.maggi.in/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.maggi.in/search?search_key={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    ]
+}</script>
+<link rel="icon" href="/sites/default/files/favicon1_0.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="https://www.maggi.in/" />
+<link rel="alternate" hreflang="en" href="https://www.maggi.in/node/86705" />
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5CFBVH');</script>
+
+    <title>Recipes by MAGGI® Which Make Everyday Cooking Deliciously Simple!</title>
+	 
+			   
+		
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_8mJUiF_8T6JFPjEqsMA2Olrx2bbd1cwCUuohILaloNM.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_xO9mYggMdeZo8AsHg4DGV7WcNCz0K0v-lTrV-sYI2SE.css" />
+
+      
+
+        							<style>
+					.h1,.h2,.h4,.h5,.heading3,.label3,.mg-search__banner_overtext input,.navigation-links,body,h1,h2,h3,h4,h5,html{}.text--dark-gray{color:#333}.text--white{color:#fff}.text--black{color:#000}.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px;}@media screen and (min-width:768px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px}}@media screen and (min-width:1024px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px}}@media screen and (min-width:1200px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:16px;line-height:26px}}.navigation-links{font-size:9px;line-height:14px;}@media screen and (min-width:768px){.navigation-links{font-size:9px;line-height:14px}}@media screen and (min-width:1024px){.navigation-links{font-size:10px;line-height:14px}}@media screen and (min-width:1200px){.navigation-links{font-size:12px;line-height:16px}}@media print,screen and (min-width:48em){.mg-navigation{width:3.75rem}}@media print,screen and (min-width:64em){.mg-navigation{width:5rem}}@media screen and (min-width:75em){.mg-navigation{width:6.25rem}}@media screen and (max-width:47.99875em){.mg-navigation .brand-logo{cursor:pointer;position:fixed;top:2.0625rem;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);margin-top:1.375rem;z-index:1;opacity:1;-webkit-transition:opacity .3s ease-in;transition:opacity .3s ease-in}}.mg-navigation .hide-logo{opacity:0}@media screen and (max-width:47.99875em){.mg-navigation .brand-logo img{width:5.6875rem;height:3.625rem}}.mg-navigation .navigation-container{z-index:5;bottom:0;width:100%;position:fixed}@media print,screen and (min-width:48em){.mg-navigation .navigation-container{height:inherit;width:3.75rem;position:fixed;top:0;bottom:0;-webkit-box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);overflow:-moz-scrollbars-none;-ms-overflow-style:none}.mg-navigation .navigation-container::-webkit-scrollbar{width:0!important}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container{width:5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container{width:6.25rem}}.mg-navigation .navigation-container .mg-navigation-l1{z-index:13;-webkit-box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);overflow:visible;overflow:-moz-scrollbars-none;-ms-overflow-style:none}.mg-navigation .navigation-container .mg-navigation-l1::-webkit-scrollbar{width:0!important}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1{position:relative;height:100vh;background:#fff}}.mg-navigation .navigation-container .mg-navigation-l1 .logo{position:relative;z-index:9;outline:0 none;border:0}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 .logo{cursor:pointer;position:fixed;top:2.0625rem;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);margin-top:1.375rem}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 .logo.hide-brandlogo,.mg-navigation .navigation-container .mg-navigation-l1 .logo.hide-logo{top:-6.875rem}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 .logo{height:8.125rem;text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}}.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:5.6875rem;height:3.625rem;max-width:unset;margin-right:-1.875rem}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:4.125rem;height:2.625rem}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:5.625rem;height:3.5625rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:7.0625rem;height:4.5rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{margin:0}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{overflow:scroll;height:4.375rem;padding:.8125rem .75rem 0;background:#fff}}@media screen and (max-width:47.99875em) and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify}}@media screen and (max-width:47.99875em) and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:block}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:block;overflow-y:scroll;height:calc(100vh - 150px)}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{-ms-overflow-style:none}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{list-style:none;text-align:center;color:#333}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{display:table-cell;padding-right:.5625rem;min-width:4.5rem}}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{padding-right:0;display:block}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{margin-top:2.5rem;height:2.8125rem;padding:0 .125rem;padding:0}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{margin-top:3.125rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li:last-child{margin-bottom:2.5rem;padding-right:0}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;min-width:3.75rem;text-decoration:none}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{opacity:.42;max-width:1.5625rem;max-height:1.5625rem}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{max-width:1.5rem;max-height:1.5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{max-width:1.875rem;max-height:1.875rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:.6875rem;margin-top:.4375rem;color:#333}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:.875rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:1rem}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{width:3.75rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active img,.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links:hover img{opacity:1}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active span{padding-bottom:.4375rem;border-bottom:.4375rem solid #fff33e}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active span{border-bottom:.25rem solid #fff33e}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{padding:.8125rem 0 0}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{display:block;overflow-y:scroll;height:calc(100vh - 150px)}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{-ms-overflow-style:none}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li{padding-right:.625rem;min-width:3.75rem}}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li{padding-right:0;display:block}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li:nth-child(5){padding-right:0}.mg-navigation .navigation-container .mg-navigation-l2{width:0;height:0;z-index:12;position:fixed;-webkit-transition-delay:.15s;transition-delay:.15s;background:#fff}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2{z-index:-1;bottom:0;width:100%;max-height:65vh;overflow-y:auto;-webkit-transition:height .3s linear;transition:height .3s linear}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2{top:0;height:100vh;-webkit-transition:width .3s linear;transition:width .3s linear;left:0}}.mg-navigation .navigation-container .mg-navigation-l2.active{-webkit-box-shadow:0 -.625rem 0 1.25rem 0 rgba(0,0,0,.1);box-shadow:0 -.625rem 0 1.25rem 0 rgba(0,0,0,.1)}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2.active{bottom:4.375rem;height:25rem;max-height:34.375rem}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2.active{position:absolute;width:18rem;left:3.6875rem}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l2.active{width:16.5rem;left:4.9375rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l2.active{width:24.9375rem;left:6.1875rem}}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout{float:right;width:1.5rem;opacity:0;margin:1.75rem 1.75rem 0 0}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout.close-animate{-webkit-animation:flyout-close-scale .5s ease-in-out forwards;animation:flyout-close-scale .5s ease-in-out forwards;-webkit-animation-delay:.15s;animation-delay:.15s}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout{position:fixed;right:0;z-index:9}}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout.hide-close-flyout{-webkit-animation:flyout-close-skew .3s ease-in-out forwards;animation:flyout-close-skew .3s ease-in-out forwards;-webkit-animation-delay:0;animation-delay:0}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout span{background-repeat:no-repeat;display:block;height:1.5rem;width:1.5rem;background-size:1.5rem}.mg-navigation .navigation-container .mg-navigation-l2 ul{padding-top:4.4375rem;padding-left:0}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2 ul{position:absolute;top:50%;left:0;margin-right:-50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);padding:0 3.6875rem;max-height:87vh;overflow-y:auto}.mg-navigation .navigation-container .mg-navigation-l2 ul::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l2 ul{-ms-overflow-style:none}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l2 ul{padding:0 2.5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l2 ul{padding:0 3.9375rem}}.mg-navigation .navigation-container .mg-navigation-l2 ul li{list-style:none;opacity:0;text-align:left;margin-bottom:1.375rem;-webkit-animation:slideInFromLeft .3s ease-out forwards;animation:slideInFromLeft .3s ease-out forwards}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2 ul li{text-align:center}}.mg-navigation .navigation-container .mg-navigation-l2 ul li:last-child{margin-bottom:1.9375rem}.mg-navigation .navigation-container .mg-navigation-l2 ul li a{color:#999;display:inline-block}.mg-navigation .navigation-container .mg-navigation-l2 ul li a:active,.mg-navigation .navigation-container .mg-navigation-l2 ul li a:focus,.mg-navigation .navigation-container .mg-navigation-l2 ul li a:hover{color:#333}.firefox .mg-navigation{overflow:hidden}.firefox .mg-navigation .navigation-container{overflow:unset}.firefox .mg-navigation .mg-navigation-l2.active{overflow:hidden}.firefox .mg-navigation .mg-navigation-l1{z-index:13;overflow:auto}@media print,screen and (min-width:48em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{height:80vh;overflow-y:scroll;margin-bottom:3.125rem}}@media print,screen and (min-width:64em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{width:100%;overflow-y:hidden}}@media screen and (min-width:75em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{width:100%}}@media print,screen and (min-width:48em){.firefox .mg-navigation .mg-navigation-l1{position:fixed;overflow:visible;width:3.75rem}}@media print,screen and (min-width:64em){.firefox .mg-navigation .mg-navigation-l1{width:5rem}}@media screen and (min-width:75em){.firefox .mg-navigation .mg-navigation-l1{width:6.25rem}}.firefox .mg-navigation .mg-navigation-l2.active{position:absolute}.firefox ul.navigation-sub-links{width:106%}.edge .mg-navigation .navigation-container .mg-navigation-l1 .logo img,.ie .mg-navigation .navigation-container .mg-navigation-l1 .logo img{max-width:113px}@media print,screen and (min-width:64em){.edge .mg-navigation-l2,.ie .mg-navigation-l2{z-index:-1;opacity:0}.edge .mg-navigation-l2.active,.ie .mg-navigation-l2.active{opacity:1;z-index:12}}@media screen and (max-width:47.99875em){.iphone .mg-navigation .brand-logo{z-index:1;display:block}}.mg-main-wrapper{position:relative}.mg-menu-container{background:0 0}@media print,screen and (min-width:48em){.mg-menu-container{width:3.75rem}}@media print,screen and (min-width:64em){.mg-menu-container{width:5rem}}@media screen and (min-width:75em){.mg-menu-container{width:6.25rem}}
+				</style>
+				
+                <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/2xUe1Ae.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/3_1F49b.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/3_ofXQ4.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/3vgsubh.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/11_HT5J.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/17gGfTr.woff2" as="font" type="font/woff2" crossorigin>
+                <script type="text/javascript" src="/modules/contrib/seckit/js/seckit.document_write.js"></script>
+        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-no-body" media="all" href="/modules/contrib/seckit/css/seckit.no_body.css" />
+        <!-- stop SecKit protection -->
+        <noscript>
+        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-noscript-tag" media="all" href="/modules/contrib/seckit/css/seckit.noscript_tag.css" />
+        </noscript></head>
+		<body data-current-location="https://www.maggi.in/node/86705/" >        <noscript>
+        <div id="seckit-noscript-tag">
+          Sorry, you need to enable JavaScript to visit this website.
+        </div>
+        </noscript>
+                    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CFBVH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div role="main" class="skip">
+	<a href="#main">Skip to Main Content</a>
+</div>
+<div class="grid-container no-margin no-padding">
+		<div class="grid-x">
+		<div class="cell small-24">
+			<main class="mg-main-wrapper" id="main">
+				<div class="grid-container no-margin no-padding">
+					<div class="grid-x">
+						<div class="cell mg-menu-container">
+							  
+
+<nav id="nav" class="mg-navigation mg-js-navigation " data-navigation-list="4">
+    <a href="https://www.maggi.in" title="Maggi" target="" class="brand-logo hide-for-medium">
+        <img src="https://www.maggi.in/sites/default/files/maggi_logo_png_0.png" alt="Maggi" width="100">
+    </a>
+    <div class="navigation-container">
+        <div class="mg-navigation-l1">
+            <a href="https://www.maggi.in" title="Maggi" target="" class="logo show-for-medium">
+                <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/maggi_logo_png_0.png" alt="Maggi">
+            </a>
+            <ul class="navigation-list ">
+                                                            <li>
+							                                
+                                                                    <a href="" title="" target="_self" class="navigation-links has-child-menu" role="button" aria-expanded="false">
+                                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/01_Rezepte.svg" alt="">
+                                        <span>Recipes</span>
+                                    </a>
+                                							                        </li>
+                                            <li>
+							                                
+                                                                    <a href="" title="" target="_self" class="navigation-links has-child-menu" role="button" aria-expanded="false">
+                                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2019-12/05_Maggi.svg" alt="">
+                                        <span>Maggi</span>
+                                    </a>
+                                							                        </li>
+                                            <li>
+							                                
+                                                                    <a href="/search/" title="" target="_self" class="navigation-links">
+                                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2019-12/03_Suche_11.svg" alt="">
+                                        <span>Search</span>
+                                    </a>
+                                							                        </li>
+                                            <li>
+							                                
+                                                                    <a href="/login" title="" target="_self" class="navigation-links">
+                                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-07/MAGGI_Navigation_MyMaggi_0_0.svg" alt="">
+                                        <span>Login</span>
+                                    </a>
+                                							                        </li>
+                                                </ul>
+        </div>
+        <div class="mg-navigation-l2">
+            <button class="not-reachable first hide"></button>
+            <a href="javascript:void(0)" title="Close Flyout" class="close-flyout" tabindex="-1" role="button">
+                <span class="close"></span>
+            </a>
+                            <div>
+                                            <ul class="navigation-sub-links hide">
+                                                                                                <li>
+                                        <a href="/recipe-overview/" title="" target="_self" class="" tabindex="-1">
+                                            All Recipes
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipe-category/" title="" target="_self" class="" tabindex="-1">
+                                            Our Collection
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/quick-easy/" title="" target="_self" class="" tabindex="-1">
+                                            Quick &amp; Easy Recipes
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/easy-snacks/" title="" target="_self" class="" tabindex="-1">
+                                            Easy Snacks Recipes
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/restaurant-style-home/" title="" target="_self" class="" tabindex="-1">
+                                            Restaurant Style at Home
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/healthy/" title="" target="_self" class="" tabindex="-1">
+                                            Healthy Recipes
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/recipes/maggi-noodles/" title="" target="_self" class="" tabindex="-1">
+                                            MAGGI Noodles Recipes
+                                        </a>
+                                    </li>
+                                                                                    </ul>
+                                            <ul class="navigation-sub-links hide">
+                                                                                                <li>
+                                        <a href="/our-range/" title="" target="_self" class="" tabindex="-1">
+                                            Our Range
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="https://www.nestle.in/aboutus" title="" target="_blank" class="" tabindex="-1">
+                                            About Us
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/faq/" title="" target="_self" class="" tabindex="-1">
+                                            FAQ
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="/from-our-kitchen/" title="" target="_self" class="" tabindex="-1">
+                                            From Our Kitchen
+                                        </a>
+                                    </li>
+                                                                                    </ul>
+                                            <ul class="navigation-sub-links hide">
+                                                    </ul>
+                                            <ul class="navigation-sub-links hide">
+                                                    </ul>
+                                    </div>
+                        <button class="not-reachable last hide"></button>
+        </div>
+        <div class="main-nvigation-blocker"></div>
+    </div>
+</nav>
+<div class="theme-toggle-wrapper">
+    <button class="theme-toggle" aria-pressed="false" title=Contrast><span></span></button>
+</div>
+
+
+						</div>
+						<div class="cell small-24 medium-auto mg-containt-container">
+							  
+<div data-drupal-messages-fallback class="hidden"></div>
+      
+
+            <div class="mg-home-stage grid-container no-padding no-margin banner  ">
+      
+  <div class="grid-x mg-home-stage-background" data-background='[{&quot;image&quot;:{&quot;source&quot;:{&quot;small&quot;:&quot;https:\/\/www.maggi.in\/sites\/default\/files\/styles\/home_stage_375_657\/public\/Global-Rollout-banner.jpg?h=4f5b30f1&amp;itok=79uPWW8i&quot;,&quot;medium&quot;:&quot;https:\/\/www.maggi.in\/sites\/default\/files\/styles\/home_stage_708_398\/public\/Global-Rollout-banner.jpg?h=4f5b30f1&amp;itok=so7S0oXv&quot;,&quot;large&quot;:&quot;https:\/\/www.maggi.in\/sites\/default\/files\/styles\/home_stage_944_531\/public\/Global-Rollout-banner.jpg?h=4f5b30f1&amp;itok=zircNEkn&quot;,&quot;xlarge&quot;:&quot;https:\/\/www.maggi.in\/sites\/default\/files\/styles\/home_stage_1500_700\/public\/Global-Rollout-banner.jpg?h=4f5b30f1&amp;itok=2lnu11O7&quot;},&quot;alt&quot;:&quot;Homepage Main Banner&quot;},&quot;image_class&quot;:&quot;image_class&quot;,&quot;type&quot;:&quot;image&quot;}]'>
+  </div>
+  <div class="grid-container mg-home-stage__details  no-margin">
+    <div class="grid-x">
+      <h1 class="cell medium-16 large-12 mg-home-stage__title ">Everyday recipes made deliciously simple &amp; healthy</h1>
+    </div>
+    <div
+      class="grid-x">
+      <!-- html for quick search -->
+      <div class="cell large-8 medium-12 mg-search__banner_overtext mg-search__home-stage  hide">
+        <div class="mg-search__banner_input js-mg-search__banner_input" data-search-page-url="/search" data-homepage="true" data-action="search-autocomplete">
+          <input type="text" name="search" id="search" aria-label="Enter your search here" aria-autocomplete="true" autocomplete="off">
+          <button class="mg-result-close-icon hide" aria-label="Clear Search term"></button>
+          <button class="mg-search-submit js-mg-search-submit" aria-label="Search button"></button>
+        </div>
+        <div class="js-result-text-for-sr show-for-sr" aria-live="polite" data-no-result-text="No result found" data-result-text="showing {X} results"></div>
+      </div>
+
+      <div class="cell medium-12 large-8 mg-home-stage__details-search extElement mg-search-animation">
+         <a class="js-search-button" href="javascript:void(0)" role="button" aria-label="Click Here to start your Search">
+                      <p class="input  active ">What&#039;s cooking today?</p>
+                    <div class="button">
+            <span class="search-icon"></span>
+          </div>
+        </a>
+      </div>
+      
+    </div>
+    
+                                                                                                                  <div class="grid-x mg-home-stage__searchtags">
+        <div class="cell small-20">
+          <ul>
+
+                     
+                                     
+                            <li class="mg-tag-list">
+            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Restaurant Style" }' href="/recipes/restaurant-style-home/" title="Restaurant Style" target="_self" class="mg-tag " style="background-color:; color:"  >Restaurant Style</a>
+        </li>
+                     
+                                     
+                            <li class="mg-tag-list">
+            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Quick &amp; Easy" }' href="/recipes/quick-easy/" title="Quick &amp; Easy" target="_self" class="mg-tag " style="background-color:; color:"  >Quick &amp; Easy</a>
+        </li>
+                     
+                                     
+                            <li class="mg-tag-list">
+            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Snacks" }' href="/recipes/easy-snacks/" title="Snacks" target="_self" class="mg-tag " style="background-color:; color:"  >Snacks</a>
+        </li>
+                     
+                                     
+                            <li class="mg-tag-list">
+            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Dinner" }' href="/recipes/dinner/" title="Dinner" target="_self" class="mg-tag " style="background-color:; color:"  >Dinner</a>
+        </li>
+                     
+                                     
+                            <li class="mg-tag-list">
+            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Paneer" }' href="/recipes/paneer/" title="Paneer" target="_self" class="mg-tag " style="background-color:; color:"  >Paneer</a>
+        </li>
+    
+</ul>
+        </div>
+      </div>
+        <div class="grid-x">
+        <div class="cell">
+          <div class="btn-log">
+
+  
+  
+</div>        </div>
+    </div>
+
+  </div>
+  <div class="mg-home-stage__arrow  hide-for-medium">
+    <div class="circle animate-circle js-home-scroll"></div>
+    <a class="arrow animate-arrow js-home-scroll" href="javascript:void(0)">
+      <span></span>
+    </a>
+  </div>
+  <div class="mg-search__topsuggestion hide"></div>
+</div>
+
+      
+             <section class="grid-container mg-teaser-carousel" role="region"  aria-label="" >
+    <div class="grid-x">
+        <div class="cell small-24 medium-offset-2 medium-20 mg-teaser-carousel__title">
+            <div class="grid-x">
+                <div class="cell small-22 medium-18">
+                    <h2>Restaurant Style At Home</h2>
+                </div>
+                <div class="cell shrink mg-slick-controls mg-teaser-carousel-control"></div>
+            </div>
+        </div>
+
+        <div class="cell small-24 medium-offset-2 medium-22 xlarge-20">
+            <div class="mg-slick" data-left-control-aria="Moves the slider one tab to the left" data-right-control-aria="Moves the slider one tab to the right" data-slide-info="Items {X} to {Y} are displayed from {Z} in the list">
+                                                            <div class="mg-product-card">
+    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"Shahi Paneer Recipe" }'  href='https://www.maggi.in/recipes/shahi-paneer/' target='_self' class="js-mg-card-link">
+        <div   class="mg-recipe-picture" >
+        <picture>
+            <source media="(min-width: 1200px)" srcset='https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_365_182.jpg'>
+            <source media="(min-width: 1024px)" srcset='https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_224_112.jpg'>
+            <source media="(min-width: 768px)" srcset='https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_300_169.jpg'>
+            <source media="(min-width: 0px)" srcset='https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_315_158.jpg'>
+            <img class="popup-img lazyload" src="https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_365_182.jpg" alt=""/>
+        </picture>
+        </div>
+        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
+            <div class="rec ">
+            <h3 class="js-mg-recipe-info mg-recipe-info ">Shahi Paneer Recipe</h3>
+            <div class="reci_score">
+                              </div>
+            
+            </div>
+
+                        <div class="mg-recipe-stats">
+                                                <span class="js-recipe-star" role="img" aria-label="The recipe was given a rating of 4.3 stars"><div class="mg-stars"> 
+         <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+           
+<span class=" mg-half-stars">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19.97 19.06" style="enable-background:new 0 0 19.97 19.06;" xml:space="preserve">
+        <path fill = "#ccc" d="M10,0L10,0c0.25,0,0.48,0.14,0.59,0.37l2.73,5.52l6.09,0.89c0.25,0.04,0.46,0.21,0.54,0.45c0.08,0.24,0.01,0.5-0.17,0.68  l-4.41,4.3l1,6.07c0.04,0.25-0.06,0.5-0.26,0.65c-0.2,0.15-0.48,0.17-0.7,0.05L10,16.12"/>
+        <path fill="#FFF33E" d="M10.03,16.12L4.56,19c-0.1,0.05-0.2,0.07-0.31,0.06c-0.14,0-0.28-0.05-0.39-0.13c-0.2-0.15-0.3-0.4-0.26-0.65l1-6.07  l-4.37-4.3c-0.19-0.17-0.27-0.43-0.2-0.68c0.08-0.24,0.29-0.41,0.54-0.45l6.09-0.89l2.76-5.52C9.53,0.14,9.77-0.01,10.03,0"/>
+    </svg>
+</span>
+    </div>
+</span>
+                                                                            <span class="mg-duration js-mg-duration" role="img" aria-label="49 Min preparation">
+                        <span class="mg-clock-icon js-mg-duration-icon"></span>
+                        <span class="mg-duration-text js-mg-duration-text">49 Min</span>
+                    </span>
+                                                            <span class="mg-difficulty js-mg-difficulty" role="img" aria-label="Level of difficulty Easy">
+                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
+                        <span class="mg-difficulty-text js-mg-difficulty-text">Easy</span>
+                    </span>
+                            </div>
+        </div>
+    </a>
+                                         
+</div>
+                                                                                <div class="mg-product-card">
+    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"Butter Chicken Recipe" }'  href='https://www.maggi.in/recipes/butter-chicken/' target='_self' class="js-mg-card-link">
+        <div   class="mg-recipe-picture" >
+        <picture>
+            <source media="(min-width: 1200px)" srcset='https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_365_182.jpg'>
+            <source media="(min-width: 1024px)" srcset='https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_224_112.jpg'>
+            <source media="(min-width: 768px)" srcset='https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_300_169.jpg'>
+            <source media="(min-width: 0px)" srcset='https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_315_158.jpg'>
+            <img class="popup-img lazyload" src="https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_365_182.jpg" alt=""/>
+        </picture>
+        </div>
+        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
+            <div class="rec ">
+            <h3 class="js-mg-recipe-info mg-recipe-info ">Butter Chicken Recipe</h3>
+            <div class="reci_score">
+                              </div>
+            
+            </div>
+
+                        <div class="mg-recipe-stats">
+                                                <span class="js-recipe-star" role="img" aria-label="The recipe was given a rating of 4.3 stars"><div class="mg-stars"> 
+         <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+           
+<span class=" mg-half-stars">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19.97 19.06" style="enable-background:new 0 0 19.97 19.06;" xml:space="preserve">
+        <path fill = "#ccc" d="M10,0L10,0c0.25,0,0.48,0.14,0.59,0.37l2.73,5.52l6.09,0.89c0.25,0.04,0.46,0.21,0.54,0.45c0.08,0.24,0.01,0.5-0.17,0.68  l-4.41,4.3l1,6.07c0.04,0.25-0.06,0.5-0.26,0.65c-0.2,0.15-0.48,0.17-0.7,0.05L10,16.12"/>
+        <path fill="#FFF33E" d="M10.03,16.12L4.56,19c-0.1,0.05-0.2,0.07-0.31,0.06c-0.14,0-0.28-0.05-0.39-0.13c-0.2-0.15-0.3-0.4-0.26-0.65l1-6.07  l-4.37-4.3c-0.19-0.17-0.27-0.43-0.2-0.68c0.08-0.24,0.29-0.41,0.54-0.45l6.09-0.89l2.76-5.52C9.53,0.14,9.77-0.01,10.03,0"/>
+    </svg>
+</span>
+    </div>
+</span>
+                                                                            <span class="mg-duration js-mg-duration" role="img" aria-label="75 Min preparation">
+                        <span class="mg-clock-icon js-mg-duration-icon"></span>
+                        <span class="mg-duration-text js-mg-duration-text">75 Min</span>
+                    </span>
+                                                            <span class="mg-difficulty js-mg-difficulty" role="img" aria-label="Level of difficulty Medium">
+                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
+                        <span class="mg-difficulty-text js-mg-difficulty-text">Medium</span>
+                    </span>
+                            </div>
+        </div>
+    </a>
+                                         
+</div>
+                                                                                <div class="mg-product-card">
+    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"Vegetable Biryani Recipe" }'  href='https://www.maggi.in/recipes/vegetable-biryani/' target='_self' class="js-mg-card-link">
+        <div   class="mg-recipe-picture" >
+        <picture>
+            <source media="(min-width: 1200px)" srcset='https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_365_182.jpg'>
+            <source media="(min-width: 1024px)" srcset='https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_224_112.jpg'>
+            <source media="(min-width: 768px)" srcset='https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_300_169.jpg'>
+            <source media="(min-width: 0px)" srcset='https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_315_158.jpg'>
+            <img class="popup-img lazyload" src="https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_365_182.jpg" alt=""/>
+        </picture>
+        </div>
+        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
+            <div class="rec ">
+            <h3 class="js-mg-recipe-info mg-recipe-info ">Vegetable Biryani Recipe</h3>
+            <div class="reci_score">
+                              </div>
+            
+            </div>
+
+                        <div class="mg-recipe-stats">
+                                                <span class="js-recipe-star" role="img" aria-label="The recipe was given a rating of 4.3 stars"><div class="mg-stars"> 
+         <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+             <span class=" active">
+        <svg viewbox="0 0 19.97 19.06">
+            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
+        </svg>
+    </span>
+           
+<span class=" mg-half-stars">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19.97 19.06" style="enable-background:new 0 0 19.97 19.06;" xml:space="preserve">
+        <path fill = "#ccc" d="M10,0L10,0c0.25,0,0.48,0.14,0.59,0.37l2.73,5.52l6.09,0.89c0.25,0.04,0.46,0.21,0.54,0.45c0.08,0.24,0.01,0.5-0.17,0.68  l-4.41,4.3l1,6.07c0.04,0.25-0.06,0.5-0.26,0.65c-0.2,0.15-0.48,0.17-0.7,0.05L10,16.12"/>
+        <path fill="#FFF33E" d="M10.03,16.12L4.56,19c-0.1,0.05-0.2,0.07-0.31,0.06c-0.14,0-0.28-0.05-0.39-0.13c-0.2-0.15-0.3-0.4-0.26-0.65l1-6.07  l-4.37-4.3c-0.19-0.17-0.27-0.43-0.2-0.68c0.08-0.24,0.29-0.41,0.54-0.45l6.09-0.89l2.76-5.52C9.53,0.14,9.77-0.01,10.03,0"/>
+    </svg>
+</span>
+    </div>
+</span>
+                                                                            <span class="mg-duration js-mg-duration" role="img" aria-label="67 Min preparation">
+                        <span class="mg-clock-icon js-mg-duration-icon"></span>
+                        <span class="mg-duration-text js-mg-duration-text">67 Min</span>
+                    </span>
+                                                            <span class="mg-difficulty js-mg-difficulty" role="img" aria-label="Level of difficulty Medium">
+                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
+                        <span class="mg-difficulty-text js-mg-difficulty-text">Medium</span>
+                    </span>
+                            </div>
+        </div>
+    </a>
+                                         
+</div>
+                                                </div>
+            <div class="show-for-sr js-carousal-status" aria-live="polite" data-status-text="Showing new items"></div>
+        </div>
+                    <div class="cell small-24 mg-btn-wrapper">
+                
+                                                    
+                <a data-gtmevent='{"event":"recipeRecommendationsLoadAll","recipeRecommendationsLoadAll":"View All Recipes" }'  href=" /recipes/restaurant-style-home/ " class="mg-btn small dark" title="Restaurant Style At Home" target="_self"  rel="follow"    >
+	<div>
+					View All Recipes
+							</div>
+</a>
+            </div>
+            </div>
+</section>
+
+           
+        <section class="grid-container mg-teaser-content ">
+        <div class="grid-x">
+            <div class="cell small-24 medium-20 medium-offset-2 mg-teaser-content__container left">
+                <div class="mg-teaser-content__container-img left">
+                      
+                                           <a target="_blank" href=" https://www.deshkeliye.maggi.in/ "> 
+                            <picture>
+                                <source media="(min-width: 1200px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=MgJmfzFK'>
+                                <source media="(min-width: 1024px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_392_380/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=PJWUNZsL'>
+                                <source media="(min-width: 768px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_588_331/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=JbHlMbCH'>
+                                <source media="(min-width: 0px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_315_256/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=5JTqrIP_'>
+                                <img class="lazyload" alt="MAGGI DKL Banner -Final" data-src='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=MgJmfzFK'>
+                            </picture>
+                        </a>
+                                    </div>
+                <div class="mg-teaser-content__container-des left">
+                                            <h2>Apna Food Business</h2>
+                                                                                    <div class="description">
+                            From the shortlisted top 20 participants in stage 3, top 5 winners each from both categories - Food Delivery Business and Online Food Channel have been selected basis the business plan submitted by them. To explore the winners from Stage 3, visit www.deshkeliye.maggi.in.  
+                        </div>
+                                        <div class="redirect-btn">
+                                                                                                                                        <a  href=" https://www.deshkeliye.maggi.in/ " class="mg-btn dark" title="Visit Now" target="_blank"  rel="follow"    aria-label="Visit Now Apna Food Business"  >
+	<div>
+					Visit Now
+							</div>
+</a>
+                                                                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+           	<section class="grid-container mg-teaser-full no-margin-from-bottom  theme-light ">
+		<div class="grid-x ">
+			<div class="cell small-24  mg-teaser-full-full   mg-gutter-container ">
+								<picture>
+					<source media="(min-width: 1200px)" data-srcset="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_desktop/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=MKuiwx5c">
+					<source media="(min-width: 1024px)" data-srcset="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_landscape/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=-LsFvI2h">
+					<source media="(min-width: 768px)" data-srcset="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_portrait/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=U5YzqYJT">
+					<source media="(min-width: 0)" data-srcset="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_mobile/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=IitzXhL1">					
+					<img data-src="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_landscape/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=-LsFvI2h" alt="MAGGI Noodles Salsa - 1" width="100%" class="lazyload">	
+				</picture>
+								<div class="grid-x mg-teaser-full__desc ">
+										<div class="small-24">
+													<h2>Your favourite MAGGI Noodles like never before!</h2>
+																			<p>#LetsMakeMaggi</p>
+																		  						  															<a  href=" /recipes/maggi-noodles/ " class="mg-btn small" title="View All Recipes" target="_self"  rel="follow"    aria-label="View All Recipes Your favourite MAGGI Noodles like never before!"  >
+	<div>
+					View All Recipes
+							</div>
+</a>
+																				
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+           
+        <section class="grid-container mg-teaser-content ">
+        <div class="grid-x">
+            <div class="cell small-24 medium-20 medium-offset-2 mg-teaser-content__container left">
+                <div class="mg-teaser-content__container-img left">
+                      
+                                           <a target="_self" href=" /recipes/matar-paneer/ "> 
+                            <picture>
+                                <source media="(min-width: 1200px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=T42jLYsX'>
+                                <source media="(min-width: 1024px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_392_380/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=OA15a_--'>
+                                <source media="(min-width: 768px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_588_331/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=6BvkwnvX'>
+                                <source media="(min-width: 0px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_315_256/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=Gcle12TI'>
+                                <img class="lazyload" alt="Matar Paneer" data-src='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=T42jLYsX'>
+                            </picture>
+                        </a>
+                                    </div>
+                <div class="mg-teaser-content__container-des left">
+                                            <h2>Everyday Specials</h2>
+                                                                <p>Matar Paneer</p>
+                                                                <div class="description">
+                            Be it a simple weekday lunch or a fancy dinner party, a well-made Matar Paneer is always a delight!  
+                        </div>
+                                        <div class="redirect-btn">
+                                                                                                                                        <a  href=" /recipes/matar-paneer/ " class="mg-btn dark" title="Try It" target="_self"  rel="follow"    aria-label="Try It Everyday Specials"  >
+	<div>
+					Try It
+							</div>
+</a>
+                                                                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+           
+        <section class="grid-container mg-teaser-content ">
+        <div class="grid-x">
+            <div class="cell small-24 medium-20 medium-offset-2 mg-teaser-content__container left">
+                <div class="mg-teaser-content__container-img left">
+                      
+                                           <a target="_self" href=" /recipes/easy-snacks/ "> 
+                            <picture>
+                                <source media="(min-width: 1200px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=wLH6NrU5'>
+                                <source media="(min-width: 1024px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_392_380/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=X9DkRlom'>
+                                <source media="(min-width: 768px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_588_331/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=cNjGWCkb'>
+                                <source media="(min-width: 0px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_315_256/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=wkdgEgsL'>
+                                <img class="lazyload" alt="Easy Snack" data-src='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=wLH6NrU5'>
+                            </picture>
+                        </a>
+                                    </div>
+                <div class="mg-teaser-content__container-des left">
+                                            <h2>Easy Snacks</h2>
+                                                                                    <div class="description">
+                            Lip-smacking snacks for delightful evenings with your family! 
+                        </div>
+                                        <div class="redirect-btn">
+                                                                                                                                        <a  href=" /recipes/easy-snacks/ " class="mg-btn dark" title="View All Recipes" target="_self"  rel="follow"    aria-label="View All Recipes Easy Snacks"  >
+	<div>
+					View All Recipes
+							</div>
+</a>
+                                                                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+           
+        <section class="grid-container mg-teaser-content ">
+        <div class="grid-x">
+            <div class="cell small-24 medium-20 medium-offset-2 mg-teaser-content__container left">
+                <div class="mg-teaser-content__container-img left">
+                      
+                                           <a target="_self" href=" /recipes/quick-easy/ "> 
+                            <picture>
+                                <source media="(min-width: 1200px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=qQIPzAdq'>
+                                <source media="(min-width: 1024px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_392_380/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=DwvI1Uf9'>
+                                <source media="(min-width: 768px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_588_331/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=5XLLQ0Q5'>
+                                <source media="(min-width: 0px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_315_256/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=QR_gQb-s'>
+                                <img class="lazyload" alt="Chicken Manchurian" data-src='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=qQIPzAdq'>
+                            </picture>
+                        </a>
+                                    </div>
+                <div class="mg-teaser-content__container-des left">
+                                            <h2>Quick and Easy</h2>
+                                                                                    <div class="description">
+                            Delightfully simple to prepare, there’s something for everyone in these quick and easy breakfast, lunch, and dinner recipes! 
+                        </div>
+                                        <div class="redirect-btn">
+                                                                                                                                        <a  href=" /recipes/quick-easy/ " class="mg-btn dark" title="View All Recipes" target="_self"  rel="follow"    aria-label="View All Recipes Quick and Easy"  >
+	<div>
+					View All Recipes
+							</div>
+</a>
+                                                                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+      
+  
+							<div class="grid-x mg-secondary-block">
+								<div class="cell small-24 medium-20 medium-offset-2">
+									  
+								</div>
+							</div>
+							<div class="grid-x mg-secondary-block">
+								<div class="cell small-24">
+									<div class="grid-x">
+										<div class="cell small-24 medium-offset-2 medium-9 xlarge-6 mg-tag-left-block">
+																					</div>
+										<div class="cell small-24 medium-10 medium-offset-1 xlarge-offset-2 xlarge-12">
+																					</div>
+									</div>
+								</div>
+								<div class="cell small-24">
+									<footer id="footer">
+										  <section class="grid-container no-margin mg-footer">
+    <input type="hidden" id="translatedTemplateString" value=""
+      data-aria-star-rating="The recipe was given a rating of {X} stars"
+      data-aria-preparation="preparation"
+      data-aria-difficulty="Level of difficulty"
+      data-selected-filter="{X} attributes selected"
+      data-choose-filter="choose filters"
+      data-filter-overlay="filter overlay"
+      data-close-filter-overlay="close filter overlay"
+      data-ingredient-overlay="ingredient overlay"
+      data-close-ingredient-overlay="close ingredient overlay"
+    />
+    <input type="hidden" id="score_label" value="of 100"/>
+    <div class="grid-x mg-footer__block">
+
+          
+
+<div class="cell   small-24 medium-20 medium-offset-2 large-6 xlarge-9 ">
+    <div class="mg-footer__block-icon ">
+                            <ul>
+                                                        <li>
+                                            <a rel="follow" href="https://www.facebook.com/MeriMaggiIndia/" data-url="" title="Facebook" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Facebook" }' class=" facebook  background--social-icons-bg-color hover-effect ">
+                            <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/facebook.svg" alt="Facebook">
+                        </a>
+                                            </li>
+                                                        <li>
+                                            <a rel="follow" href="https://www.youtube.com/user/MeriMAGGI/featured/" data-url="" title="Youtube" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Youtube" }' class=" youtube  background--social-icons-bg-color hover-effect ">
+                            <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/youtube.svg" alt="Youtube">
+                        </a>
+                                            </li>
+                                                        <li>
+                                            <a rel="follow" href="https://www.instagram.com/maggiindia/" data-url="" title="Instagram" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Instagram" }' class=" instagram  background--social-icons-bg-color hover-effect ">
+                            <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-02/instagram.svg" alt="Instagram">
+                        </a>
+                                            </li>
+                                                        <li>
+                                            <a rel="follow" href="https://twitter.com/MaggiIndia/" data-url="" title="Twitter" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Twitter" }' class=" twitter  background--social-icons-bg-color hover-effect ">
+                            <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-03/Twitter%20%281%29.svg" alt="Twitter">
+                        </a>
+                                            </li>
+                                            </ul>
+            </div>
+</div>
+<div class="cell small-24 medium-9 medium-offset-2 large-offset-0 large-7 xlarge-6">
+    <div class="mg-footer__block-link footer-links">
+        <ul>
+                                            <li>
+                    <a rel="" href="https://www.maggi.in/contact_us" class="footer-link mg-grey" title="Contact Us" target="_self">
+                        Contact Us
+                    </a>
+                </li>
+                                            <li>
+                    <a rel="" href="/copyright/" class="footer-link mg-grey" title="Copyright" target="_self">
+                        Copyright
+                    </a>
+                </li>
+                    </ul>
+    </div>
+</div>
+<div class="cell small-24 medium-9 medium-offset-2 large-offset-0 large-7 xlarge-6">
+    <div class="mg-footer__block-link footer-links">
+        <ul>
+                                            <li>
+                    <a rel="" href="/terms-of-use/" class="footer-link mg-grey" title="Terms and Conditions" target="_blank">
+                        Terms and Conditions
+                    </a>
+                </li>
+                                            <li>
+                    <a rel="" href="/privacy-policy/" class="footer-link mg-grey" title="Privacy Policy" target="_self">
+                        Privacy Policy
+                    </a>
+                </li>
+                    </ul>
+    </div>
+</div>
+
+
+<div class="mg-footer__copyright cell small-24 medium-20 medium-offset-2">
+                
+</div>
+
+
+                    </div>
+
+    </section>
+
+									</footer>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+</div>
+  </div>
+
+          
+        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/86705","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"classy\/base,classy\/messages,core\/normalize,datalayer\/ajax,datalayer\/behaviors,dsu_c_core\/general,dsu_c_extend_component\/general,dsu_c_image\/general,dsu_c_sideimagetext\/general,dsu_c_text\/general,dsu_product\/dsu-product,dsu_ratings_reviews\/dsu-event-tracking,extlink\/drupal.extlink,gigya\/drupalGigya,gigya_raas\/gigyaRaas,ln_datalayer\/ajax,ln_datalayer\/events,maggi\/global-css,maggi\/global-js,maggi\/modernizr-maggi,maggi_form_validations\/maggi-social-share,newnestlegermany_components_image\/general,newnestlegermany_components_sideimagetext\/general,newnestlegermany_social_share\/social-share,nodeviewcount\/nodeviewcount.base,paragraphs\/drupal.paragraphs.unpublished,system\/base","theme":"maggi","theme_token":null},"ajaxTrustedUrl":[],"dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":0}}},"gigya":{"globalParameters":{"bypassCookiePolicy":"never","enabledProviders":"*","sessionExpiration":180,"rememberSessionExpiration":null},"apiKey":"3_-OR1oJYHfAEgaWv3pMMpp0YjJKvZ5am9XHCqHQKCjRxNsIPZZvHkz66KzgCiPxLB","dataCenter":"us1.gigya.com","lang":"en","enableRaaS":true,"raas":{"login":{"screenSet":"maggi.globaltemplate.nestle.in-1-RegistrationLogin","mobileScreenSet":"","startScreen":"gigya-login-screen","sessionExpiration":180,"rememberSessionExpiration":null},"register":{"screenSet":"maggi.globaltemplate.nestle.in-1-RegistrationLogin","mobileScreenSet":"","startScreen":"gigya-register-screen","sessionExpiration":180,"rememberSessionExpiration":null},"customScreenSets":[]}},"gigyaExtra":{"loginRedirect":"\/","logoutRedirect":"\/logout-success","isLogin":false,"session_type":"fixed","session_time":180,"remember_me_session_time":180},"ln_datalayer":{"vars":{"module_name":"ln_datalayer","module_version":"2.1.0"}},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":true,"extClass":"0","extLabel":"(Link ist extern)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"Dieser Link f\u00fchrt Sie zu einer externen Website. Wir sind nicht f\u00fcr deren Inhalt verantwortlich.","mailtoClass":"0","mailtoLabel":"(Link zum E-Mailversand)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"nodeviewcount":{"url":"\/nodeviewcount\/updateCounter","data":{"86705":{"nid":"86705","uid":0,"uip":"2a03:2880:31ff:3::face:b00c","view_mode":"full"}}},"newnestlegermany_social_share":{"networks":{"services":["facebook","twitter","pinterest","whatsapp"],"settings":{"pubid_desktop":null,"pubid_mobile":null,"active":null,"desktop_theme":null,"desktop_position":null,"enable_desktop":null,"enable_mobile":null,"mobile_theme":null,"mobile_position":null,"api":null,"is_mobile":"desktop"}}},"ajax":[],"user":{"uid":0,"permissionsHash":"754f60c20cea052b45b61fd9e1f69a2d7124981a419788127dab4be0a60d2880"}}</script>
+<script src="/sites/default/files/js/js_YqhXH0KOSUg_ScqXgx-ItKarEMSpRK1hEWZFa48Jpl4.js"></script>
+<script src="/themes/custom/maggi/js/modernizr.min.js?v=3.11.7"></script>
+<script src="/sites/default/files/js/js_XX6ZKH8LJOPDuXk9wOmfBXo3iG69pa0NeTU83dK48cA.js"></script>
+
+          <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-a6706952ebb4695212a","applicationID":"838612098","transactionName":"YQFQNxFSDxFYAhZYVlhLcwAXWg4MFiUQRElXCG4NDFcEPnoODEVLWQheBhFvLw1dBDRYXEEnXQ0XQQ4OVQQQHAdADVcU","queueTime":0,"applicationTime":291,"atts":"TUZTQVlIHB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+          </html>
+
