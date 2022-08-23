@@ -1,804 +1,1598 @@
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="lang-en">
-  <head>
-  <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-a6706952ebb4695212a",applicationID:"838612098"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-<script type="text/javascript" src="/modules/contrib/ln_datalayer/js/isMobile.min.js"></script>
-<script type="text/javascript" src="/modules/contrib/ln_datalayer/js/ln_datalayer.js"></script>
-<script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"siteName":"Maggi","event":"fireTags","pageInformation":{"pageCategory":"home_page","pageName":"Home Page","pageType":"home_page","previousPageName":"","CookingCourseBookings":""},"siteInformation":{"zone":"EUR","country":"India","business":"Food","brand":"Maggi","language":"English","technology":"Drupal","properties":"eCommerce","siteName":"Maggi","site":"","market":"SAR","optin":""},"entityInformation":{"entityName":"","entityCategory":""},"userInformation":{"deviceType":"","userID":"","gaClientID":""}});</script>
-<link rel="canonical" href="https://www.maggi.in/" />
-<link rel="shortlink" href="https://www.maggi.in/" />
-<meta name="description" content="Discover exciting MAGGI Noodle Recipes with Egg, Cheese, Paneer &amp; Chicken and a wide variety of Quick &amp; Easy Lunch, Dinner, Breakfast and Snack Recipes by MAGGI®!" />
-<meta name="facebook-domain-verification" content="lrugbx7gm37xuhvnvrgxkf9sjgxrf2" />
-<meta name="MobileOptimized" content="width" />
-<meta name="HandheldFriendly" content="true" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script type="application/ld+json">{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "Organization",
-            "name": "Maggi",
-            "sameAs": [
-                "https://www.facebook.com/MeriMaggiIndia/",
-                "https://www.youtube.com/user/MeriMAGGI/featured/",
-                "https://www.instagram.com/maggiindia/",
-                "https://twitter.com/MaggiIndia/"
-            ],
-            "url": "https://www.maggi.in/",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.maggi.in/sites/default/files/maggi_logo_png_0.png"
-            }
-        },
-        {
-            "@type": "WebSite",
-            "url": "https://www.maggi.in/",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://www.maggi.in/search?search_key={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
-        }
-    ]
-}</script>
-<link rel="icon" href="/sites/default/files/favicon1_0.ico" type="image/vnd.microsoft.icon" />
-<link rel="alternate" hreflang="en" href="https://www.maggi.in/" />
-<link rel="alternate" hreflang="en" href="https://www.maggi.in/node/86705" />
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5CFBVH');</script>
+<html lang="en-US" class="bwf-main">
+<head>
 
-    <title>Recipes by MAGGI® Which Make Everyday Cooking Deliciously Simple!</title>
-	 
-			   
-		
-    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_8mJUiF_8T6JFPjEqsMA2Olrx2bbd1cwCUuohILaloNM.css" />
-<link rel="stylesheet" media="all" href="/sites/default/files/css/css_xO9mYggMdeZo8AsHg4DGV7WcNCz0K0v-lTrV-sYI2SE.css" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69863470-3"></script>
+<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-      
+            gtag('config', 'UA-69863470-3');
+        </script>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate" />
+<meta http-equiv="Content-Language" content="en_US" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BWF Fansite</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
 
-        							<style>
-					.h1,.h2,.h4,.h5,.heading3,.label3,.mg-search__banner_overtext input,.navigation-links,body,h1,h2,h3,h4,h5,html{}.text--dark-gray{color:#333}.text--white{color:#fff}.text--black{color:#000}.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px;}@media screen and (min-width:768px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px}}@media screen and (min-width:1024px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:14px;line-height:24px}}@media screen and (min-width:1200px){.mg-navigation .navigation-container .mg-navigation-l2 ul li a{font-size:16px;line-height:26px}}.navigation-links{font-size:9px;line-height:14px;}@media screen and (min-width:768px){.navigation-links{font-size:9px;line-height:14px}}@media screen and (min-width:1024px){.navigation-links{font-size:10px;line-height:14px}}@media screen and (min-width:1200px){.navigation-links{font-size:12px;line-height:16px}}@media print,screen and (min-width:48em){.mg-navigation{width:3.75rem}}@media print,screen and (min-width:64em){.mg-navigation{width:5rem}}@media screen and (min-width:75em){.mg-navigation{width:6.25rem}}@media screen and (max-width:47.99875em){.mg-navigation .brand-logo{cursor:pointer;position:fixed;top:2.0625rem;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);margin-top:1.375rem;z-index:1;opacity:1;-webkit-transition:opacity .3s ease-in;transition:opacity .3s ease-in}}.mg-navigation .hide-logo{opacity:0}@media screen and (max-width:47.99875em){.mg-navigation .brand-logo img{width:5.6875rem;height:3.625rem}}.mg-navigation .navigation-container{z-index:5;bottom:0;width:100%;position:fixed}@media print,screen and (min-width:48em){.mg-navigation .navigation-container{height:inherit;width:3.75rem;position:fixed;top:0;bottom:0;-webkit-box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);overflow:-moz-scrollbars-none;-ms-overflow-style:none}.mg-navigation .navigation-container::-webkit-scrollbar{width:0!important}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container{width:5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container{width:6.25rem}}.mg-navigation .navigation-container .mg-navigation-l1{z-index:13;-webkit-box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);box-shadow:0 .625rem 3.125rem 0 rgba(85,85,85,.07);overflow:visible;overflow:-moz-scrollbars-none;-ms-overflow-style:none}.mg-navigation .navigation-container .mg-navigation-l1::-webkit-scrollbar{width:0!important}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1{position:relative;height:100vh;background:#fff}}.mg-navigation .navigation-container .mg-navigation-l1 .logo{position:relative;z-index:9;outline:0 none;border:0}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 .logo{cursor:pointer;position:fixed;top:2.0625rem;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);margin-top:1.375rem}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 .logo.hide-brandlogo,.mg-navigation .navigation-container .mg-navigation-l1 .logo.hide-logo{top:-6.875rem}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 .logo{height:8.125rem;text-align:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}}.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:5.6875rem;height:3.625rem;max-width:unset;margin-right:-1.875rem}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:4.125rem;height:2.625rem}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:5.625rem;height:3.5625rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 .logo img{width:7.0625rem;height:4.5rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{margin:0}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{overflow:scroll;height:4.375rem;padding:.8125rem .75rem 0;background:#fff}}@media screen and (max-width:47.99875em) and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify}}@media screen and (max-width:47.99875em) and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:block}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{display:block;overflow-y:scroll;height:calc(100vh - 150px)}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list{-ms-overflow-style:none}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{list-style:none;text-align:center;color:#333}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{display:table-cell;padding-right:.5625rem;min-width:4.5rem}}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{padding-right:0;display:block}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{margin-top:2.5rem;height:2.8125rem;padding:0 .125rem;padding:0}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li{margin-top:3.125rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li:last-child{margin-bottom:2.5rem;padding-right:0}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;min-width:3.75rem;text-decoration:none}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{opacity:.42;max-width:1.5625rem;max-height:1.5625rem}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{max-width:1.5rem;max-height:1.5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links img{max-width:1.875rem;max-height:1.875rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:.6875rem;margin-top:.4375rem;color:#333}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:.875rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{line-height:1rem}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links span{width:3.75rem}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active img,.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links:hover img{opacity:1}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active span{padding-bottom:.4375rem;border-bottom:.4375rem solid #fff33e}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list li a.navigation-links.active span{border-bottom:.25rem solid #fff33e}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{padding:.8125rem 0 0}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{display:block;overflow-y:scroll;height:calc(100vh - 150px)}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items{-ms-overflow-style:none}}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li{padding-right:.625rem;min-width:3.75rem}}@media screen and (min-width:23.5em){.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li{padding-right:0;display:block}}.mg-navigation .navigation-container .mg-navigation-l1 ul.navigation-list.more-items li:nth-child(5){padding-right:0}.mg-navigation .navigation-container .mg-navigation-l2{width:0;height:0;z-index:12;position:fixed;-webkit-transition-delay:.15s;transition-delay:.15s;background:#fff}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2{z-index:-1;bottom:0;width:100%;max-height:65vh;overflow-y:auto;-webkit-transition:height .3s linear;transition:height .3s linear}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2{top:0;height:100vh;-webkit-transition:width .3s linear;transition:width .3s linear;left:0}}.mg-navigation .navigation-container .mg-navigation-l2.active{-webkit-box-shadow:0 -.625rem 0 1.25rem 0 rgba(0,0,0,.1);box-shadow:0 -.625rem 0 1.25rem 0 rgba(0,0,0,.1)}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2.active{bottom:4.375rem;height:25rem;max-height:34.375rem}}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2.active{position:absolute;width:18rem;left:3.6875rem}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l2.active{width:16.5rem;left:4.9375rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l2.active{width:24.9375rem;left:6.1875rem}}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout{float:right;width:1.5rem;opacity:0;margin:1.75rem 1.75rem 0 0}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout.close-animate{-webkit-animation:flyout-close-scale .5s ease-in-out forwards;animation:flyout-close-scale .5s ease-in-out forwards;-webkit-animation-delay:.15s;animation-delay:.15s}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout{position:fixed;right:0;z-index:9}}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout.hide-close-flyout{-webkit-animation:flyout-close-skew .3s ease-in-out forwards;animation:flyout-close-skew .3s ease-in-out forwards;-webkit-animation-delay:0;animation-delay:0}.mg-navigation .navigation-container .mg-navigation-l2 a.close-flyout span{background-repeat:no-repeat;display:block;height:1.5rem;width:1.5rem;background-size:1.5rem}.mg-navigation .navigation-container .mg-navigation-l2 ul{padding-top:4.4375rem;padding-left:0}@media print,screen and (min-width:48em){.mg-navigation .navigation-container .mg-navigation-l2 ul{position:absolute;top:50%;left:0;margin-right:-50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);padding:0 3.6875rem;max-height:87vh;overflow-y:auto}.mg-navigation .navigation-container .mg-navigation-l2 ul::-webkit-scrollbar{width:0!important}.mg-navigation .navigation-container .mg-navigation-l2 ul{-ms-overflow-style:none}}@media print,screen and (min-width:64em){.mg-navigation .navigation-container .mg-navigation-l2 ul{padding:0 2.5rem}}@media screen and (min-width:75em){.mg-navigation .navigation-container .mg-navigation-l2 ul{padding:0 3.9375rem}}.mg-navigation .navigation-container .mg-navigation-l2 ul li{list-style:none;opacity:0;text-align:left;margin-bottom:1.375rem;-webkit-animation:slideInFromLeft .3s ease-out forwards;animation:slideInFromLeft .3s ease-out forwards}@media screen and (max-width:47.99875em){.mg-navigation .navigation-container .mg-navigation-l2 ul li{text-align:center}}.mg-navigation .navigation-container .mg-navigation-l2 ul li:last-child{margin-bottom:1.9375rem}.mg-navigation .navigation-container .mg-navigation-l2 ul li a{color:#999;display:inline-block}.mg-navigation .navigation-container .mg-navigation-l2 ul li a:active,.mg-navigation .navigation-container .mg-navigation-l2 ul li a:focus,.mg-navigation .navigation-container .mg-navigation-l2 ul li a:hover{color:#333}.firefox .mg-navigation{overflow:hidden}.firefox .mg-navigation .navigation-container{overflow:unset}.firefox .mg-navigation .mg-navigation-l2.active{overflow:hidden}.firefox .mg-navigation .mg-navigation-l1{z-index:13;overflow:auto}@media print,screen and (min-width:48em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{height:80vh;overflow-y:scroll;margin-bottom:3.125rem}}@media print,screen and (min-width:64em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{width:100%;overflow-y:hidden}}@media screen and (min-width:75em){.firefox .mg-navigation .mg-navigation-l1 ul.navigation-list{width:100%}}@media print,screen and (min-width:48em){.firefox .mg-navigation .mg-navigation-l1{position:fixed;overflow:visible;width:3.75rem}}@media print,screen and (min-width:64em){.firefox .mg-navigation .mg-navigation-l1{width:5rem}}@media screen and (min-width:75em){.firefox .mg-navigation .mg-navigation-l1{width:6.25rem}}.firefox .mg-navigation .mg-navigation-l2.active{position:absolute}.firefox ul.navigation-sub-links{width:106%}.edge .mg-navigation .navigation-container .mg-navigation-l1 .logo img,.ie .mg-navigation .navigation-container .mg-navigation-l1 .logo img{max-width:113px}@media print,screen and (min-width:64em){.edge .mg-navigation-l2,.ie .mg-navigation-l2{z-index:-1;opacity:0}.edge .mg-navigation-l2.active,.ie .mg-navigation-l2.active{opacity:1;z-index:12}}@media screen and (max-width:47.99875em){.iphone .mg-navigation .brand-logo{z-index:1;display:block}}.mg-main-wrapper{position:relative}.mg-menu-container{background:0 0}@media print,screen and (min-width:48em){.mg-menu-container{width:3.75rem}}@media print,screen and (min-width:64em){.mg-menu-container{width:5rem}}@media screen and (min-width:75em){.mg-menu-container{width:6.25rem}}
-				</style>
-				
-                <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/2xUe1Ae.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/3_1F49b.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/3_ofXQ4.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/3vgsubh.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/11_HT5J.woff2" as="font" type="font/woff2" crossorigin>
-        <link rel="preload" href="/themes/custom/maggi/UI/build/fonts/17gGfTr.woff2" as="font" type="font/woff2" crossorigin>
-                <script type="text/javascript" src="/modules/contrib/seckit/js/seckit.document_write.js"></script>
-        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-no-body" media="all" href="/modules/contrib/seckit/css/seckit.no_body.css" />
-        <!-- stop SecKit protection -->
-        <noscript>
-        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-noscript-tag" media="all" href="/modules/contrib/seckit/css/seckit.noscript_tag.css" />
-        </noscript></head>
-		<body data-current-location="https://www.maggi.in/node/86705/" >        <noscript>
-        <div id="seckit-noscript-tag">
-          Sorry, you need to enable JavaScript to visit this website.
-        </div>
-        </noscript>
-                    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CFBVH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
-    <div role="main" class="skip">
-	<a href="#main">Skip to Main Content</a>
-</div>
-<div class="grid-container no-margin no-padding">
-		<div class="grid-x">
-		<div class="cell small-24">
-			<main class="mg-main-wrapper" id="main">
-				<div class="grid-container no-margin no-padding">
-					<div class="grid-x">
-						<div class="cell mg-menu-container">
-							  
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@bwfmedia">
 
-<nav id="nav" class="mg-navigation mg-js-navigation " data-navigation-list="4">
-    <a href="https://www.maggi.in" title="Maggi" target="" class="brand-logo hide-for-medium">
-        <img src="https://www.maggi.in/sites/default/files/maggi_logo_png_0.png" alt="Maggi" width="100">
-    </a>
-    <div class="navigation-container">
-        <div class="mg-navigation-l1">
-            <a href="https://www.maggi.in" title="Maggi" target="" class="logo show-for-medium">
-                <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/maggi_logo_png_0.png" alt="Maggi">
-            </a>
-            <ul class="navigation-list ">
-                                                            <li>
-							                                
-                                                                    <a href="" title="" target="_self" class="navigation-links has-child-menu" role="button" aria-expanded="false">
-                                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/01_Rezepte.svg" alt="">
-                                        <span>Recipes</span>
-                                    </a>
-                                							                        </li>
-                                            <li>
-							                                
-                                                                    <a href="" title="" target="_self" class="navigation-links has-child-menu" role="button" aria-expanded="false">
-                                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2019-12/05_Maggi.svg" alt="">
-                                        <span>Maggi</span>
-                                    </a>
-                                							                        </li>
-                                            <li>
-							                                
-                                                                    <a href="/search/" title="" target="_self" class="navigation-links">
-                                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2019-12/03_Suche_11.svg" alt="">
-                                        <span>Search</span>
-                                    </a>
-                                							                        </li>
-                                            <li>
-							                                
-                                                                    <a href="/login" title="" target="_self" class="navigation-links">
-                                        <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-07/MAGGI_Navigation_MyMaggi_0_0.svg" alt="">
-                                        <span>Login</span>
-                                    </a>
-                                							                        </li>
-                                                </ul>
-        </div>
-        <div class="mg-navigation-l2">
-            <button class="not-reachable first hide"></button>
-            <a href="javascript:void(0)" title="Close Flyout" class="close-flyout" tabindex="-1" role="button">
-                <span class="close"></span>
-            </a>
-                            <div>
-                                            <ul class="navigation-sub-links hide">
-                                                                                                <li>
-                                        <a href="/recipe-overview/" title="" target="_self" class="" tabindex="-1">
-                                            All Recipes
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="/recipe-category/" title="" target="_self" class="" tabindex="-1">
-                                            Our Collection
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="/recipes/quick-easy/" title="" target="_self" class="" tabindex="-1">
-                                            Quick &amp; Easy Recipes
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="/recipes/easy-snacks/" title="" target="_self" class="" tabindex="-1">
-                                            Easy Snacks Recipes
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="/recipes/restaurant-style-home/" title="" target="_self" class="" tabindex="-1">
-                                            Restaurant Style at Home
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="/recipes/healthy/" title="" target="_self" class="" tabindex="-1">
-                                            Healthy Recipes
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="/recipes/maggi-noodles/" title="" target="_self" class="" tabindex="-1">
-                                            MAGGI Noodles Recipes
-                                        </a>
-                                    </li>
-                                                                                    </ul>
-                                            <ul class="navigation-sub-links hide">
-                                                                                                <li>
-                                        <a href="/our-range/" title="" target="_self" class="" tabindex="-1">
-                                            Our Range
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="https://www.nestle.in/aboutus" title="" target="_blank" class="" tabindex="-1">
-                                            About Us
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="/faq/" title="" target="_self" class="" tabindex="-1">
-                                            FAQ
-                                        </a>
-                                    </li>
-                                                                    <li>
-                                        <a href="/from-our-kitchen/" title="" target="_self" class="" tabindex="-1">
-                                            From Our Kitchen
-                                        </a>
-                                    </li>
-                                                                                    </ul>
-                                            <ul class="navigation-sub-links hide">
-                                                    </ul>
-                                            <ul class="navigation-sub-links hide">
-                                                    </ul>
-                                    </div>
-                        <button class="not-reachable last hide"></button>
-        </div>
-        <div class="main-nvigation-blocker"></div>
-    </div>
-</nav>
-<div class="theme-toggle-wrapper">
-    <button class="theme-toggle" aria-pressed="false" title=Contrast><span></span></button>
-</div>
+<link rel="icon" type="image/x-icon" href="https://bwfbadminton.com/wp-content/plugins/bwf-frontend-hacks/images/icons_touch_favicon/fi_bwf_fan.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="https://bwfbadminton.com/wp-content/plugins/bwf-frontend-hacks/images/icons_touch_favicon/fi_bwf_fan.ico" />
+<link rel="apple-touch-icon" href="https://bwfbadminton.com/wp-content/plugins/bwf-frontend-hacks/images/icons_touch_favicon/ati_bwf_fan.png" />
+<title>BWF Fansite &#8211; Badminton World Federation Fansite</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="BWF Fansite &raquo; Feed" href="https://bwfbadminton.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="BWF Fansite &raquo; Comments Feed" href="https://bwfbadminton.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="BWF Fansite &raquo; Home Comments Feed" href="https://bwfbadminton.com/home/feed/" />
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/bwfbadminton.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=1717160f66b565489b11f0a0e460e849"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='dashicons-css' href='https://bwfbadminton.com/wp-includes/css/dashicons.min.css?ver=1717160f66b565489b11f0a0e460e849' type='text/css' media='all' />
+<link rel='stylesheet' id='editor-buttons-css' href='https://bwfbadminton.com/wp-includes/css/editor.min.css?ver=1717160f66b565489b11f0a0e460e849' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://bwfbadminton.com/wp-includes/css/dist/block-library/style.min.css?ver=1717160f66b565489b11f0a0e460e849' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-ui-css' href='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/css/jquery/ui/jquery-ui.css' type='text/css' media='all' />
+<link rel='stylesheet' id='select2-css' href='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/css/select2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bwf_menu_style-css' href='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/css/bwf-menu-system.css?ver=0.58.7' type='text/css' media='all' />
+<link rel='stylesheet' id='style-parent-css' href='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/css/style.css?ver=0.58.7' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/css/fontawesome-5.13.0/css/all.min.css?ver=0.58.7' type='text/css' media='' />
+<link rel='stylesheet' id='md-icons-style-css' href='https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css?ver=0.58.7' type='text/css' media='all' />
+<link rel='stylesheet' id='vuetify-style-css' href='https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.3.6/vuetify.min.css?ver=0.58.7' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-style-css' href='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/owl-carousel2/dist/assets/owl.carousel.min.css?ver=1717160f66b565489b11f0a0e460e849' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-theme-css' href='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/owl-carousel2/dist/assets/owl.theme.default.min.css?ver=1717160f66b565489b11f0a0e460e849' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-style-css' href='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/fancybox-master/dist/jquery.fancybox.css?ver=1717160f66b565489b11f0a0e460e849' type='text/css' media='all' />
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js?ver=0.58.7' id='vue-script-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js?ver=0.58.7' id='axios-script-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/vue-i18n-8.x/dist/vue-i18n.min.js?ver=0.58.7' id='vue-i18n-script-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.3.6/vuetify.min.js?ver=0.58.7' id='vuetify-script-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/amcharts4/core.js?ver=0.58.7' id='amcharts4-core-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/amcharts4/charts.js?ver=0.58.7' id='amcharts4-charts-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/amcharts4/themes/animated.js?ver=0.58.7' id='amcharts4-theme-js'></script>
+<link rel="https://api.w.org/" href="https://bwfbadminton.com/wp-json/" /><link rel="alternate" type="application/json" href="https://bwfbadminton.com/wp-json/wp/v2/pages/39" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bwfbadminton.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://bwfbadminton.com/wp-includes/wlwmanifest.xml" />
+<link rel="canonical" href="https://bwfbadminton.com/" />
+<link rel='shortlink' href='https://bwfbadminton.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://bwfbadminton.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbwfbadminton.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://bwfbadminton.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbwfbadminton.com%2F&#038;format=xml" />
+</head>
+<body class="home page-template page-template-tmpl-home page-template-tmpl-home-php page page-id-39">
+<div id="page" class="hfeed site en-US">
 
+<section class="top-menu-section ">
 
-						</div>
-						<div class="cell small-24 medium-auto mg-containt-container">
-							  
-<div data-drupal-messages-fallback class="hidden"></div>
-      
+<header id="top-menu-desktop" class="menu-main">
 
-            <div class="mg-home-stage grid-container no-padding no-margin banner  ">
-      
-  <div class="grid-x mg-home-stage-background" data-background='[{&quot;image&quot;:{&quot;source&quot;:{&quot;small&quot;:&quot;https:\/\/www.maggi.in\/sites\/default\/files\/styles\/home_stage_375_657\/public\/Global-Rollout-banner.jpg?h=4f5b30f1&amp;itok=79uPWW8i&quot;,&quot;medium&quot;:&quot;https:\/\/www.maggi.in\/sites\/default\/files\/styles\/home_stage_708_398\/public\/Global-Rollout-banner.jpg?h=4f5b30f1&amp;itok=so7S0oXv&quot;,&quot;large&quot;:&quot;https:\/\/www.maggi.in\/sites\/default\/files\/styles\/home_stage_944_531\/public\/Global-Rollout-banner.jpg?h=4f5b30f1&amp;itok=zircNEkn&quot;,&quot;xlarge&quot;:&quot;https:\/\/www.maggi.in\/sites\/default\/files\/styles\/home_stage_1500_700\/public\/Global-Rollout-banner.jpg?h=4f5b30f1&amp;itok=2lnu11O7&quot;},&quot;alt&quot;:&quot;Homepage Main Banner&quot;},&quot;image_class&quot;:&quot;image_class&quot;,&quot;type&quot;:&quot;image&quot;}]'>
-  </div>
-  <div class="grid-container mg-home-stage__details  no-margin">
-    <div class="grid-x">
-      <h1 class="cell medium-16 large-12 mg-home-stage__title ">Everyday recipes made deliciously simple &amp; healthy</h1>
-    </div>
-    <div
-      class="grid-x">
-      <!-- html for quick search -->
-      <div class="cell large-8 medium-12 mg-search__banner_overtext mg-search__home-stage  hide">
-        <div class="mg-search__banner_input js-mg-search__banner_input" data-search-page-url="/search" data-homepage="true" data-action="search-autocomplete">
-          <input type="text" name="search" id="search" aria-label="Enter your search here" aria-autocomplete="true" autocomplete="off">
-          <button class="mg-result-close-icon hide" aria-label="Clear Search term"></button>
-          <button class="mg-search-submit js-mg-search-submit" aria-label="Search button"></button>
-        </div>
-        <div class="js-result-text-for-sr show-for-sr" aria-live="polite" data-no-result-text="No result found" data-result-text="showing {X} results"></div>
-      </div>
+<div id="nav-platform-bar" class="nav-platform-outer">
+<div class="nav-platform-inner">
 
-      <div class="cell medium-12 large-8 mg-home-stage__details-search extElement mg-search-animation">
-         <a class="js-search-button" href="javascript:void(0)" role="button" aria-label="Click Here to start your Search">
-                      <p class="input  active ">What&#039;s cooking today?</p>
-                    <div class="button">
-            <span class="search-icon"></span>
-          </div>
-        </a>
-      </div>
-      
-    </div>
-    
-                                                                                                                  <div class="grid-x mg-home-stage__searchtags">
-        <div class="cell small-20">
-          <ul>
-
-                     
-                                     
-                            <li class="mg-tag-list">
-            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Restaurant Style" }' href="/recipes/restaurant-style-home/" title="Restaurant Style" target="_self" class="mg-tag " style="background-color:; color:"  >Restaurant Style</a>
-        </li>
-                     
-                                     
-                            <li class="mg-tag-list">
-            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Quick &amp; Easy" }' href="/recipes/quick-easy/" title="Quick &amp; Easy" target="_self" class="mg-tag " style="background-color:; color:"  >Quick &amp; Easy</a>
-        </li>
-                     
-                                     
-                            <li class="mg-tag-list">
-            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Snacks" }' href="/recipes/easy-snacks/" title="Snacks" target="_self" class="mg-tag " style="background-color:; color:"  >Snacks</a>
-        </li>
-                     
-                                     
-                            <li class="mg-tag-list">
-            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Dinner" }' href="/recipes/dinner/" title="Dinner" target="_self" class="mg-tag " style="background-color:; color:"  >Dinner</a>
-        </li>
-                     
-                                     
-                            <li class="mg-tag-list">
-            <a data-gtmevent='{"event":"searchLabelClicks", "searchLabelClicks":"Paneer" }' href="/recipes/paneer/" title="Paneer" target="_self" class="mg-tag " style="background-color:; color:"  >Paneer</a>
-        </li>
-    
-</ul>
-        </div>
-      </div>
-        <div class="grid-x">
-        <div class="cell">
-          <div class="btn-log">
-
-  
-  
-</div>        </div>
-    </div>
-
-  </div>
-  <div class="mg-home-stage__arrow  hide-for-medium">
-    <div class="circle animate-circle js-home-scroll"></div>
-    <a class="arrow animate-arrow js-home-scroll" href="javascript:void(0)">
-      <span></span>
-    </a>
-  </div>
-  <div class="mg-search__topsuggestion hide"></div>
-</div>
-
-      
-             <section class="grid-container mg-teaser-carousel" role="region"  aria-label="" >
-    <div class="grid-x">
-        <div class="cell small-24 medium-offset-2 medium-20 mg-teaser-carousel__title">
-            <div class="grid-x">
-                <div class="cell small-22 medium-18">
-                    <h2>Restaurant Style At Home</h2>
-                </div>
-                <div class="cell shrink mg-slick-controls mg-teaser-carousel-control"></div>
-            </div>
-        </div>
-
-        <div class="cell small-24 medium-offset-2 medium-22 xlarge-20">
-            <div class="mg-slick" data-left-control-aria="Moves the slider one tab to the left" data-right-control-aria="Moves the slider one tab to the right" data-slide-info="Items {X} to {Y} are displayed from {Z} in the list">
-                                                            <div class="mg-product-card">
-    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"Shahi Paneer Recipe" }'  href='https://www.maggi.in/recipes/shahi-paneer/' target='_self' class="js-mg-card-link">
-        <div   class="mg-recipe-picture" >
-        <picture>
-            <source media="(min-width: 1200px)" srcset='https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_365_182.jpg'>
-            <source media="(min-width: 1024px)" srcset='https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_224_112.jpg'>
-            <source media="(min-width: 768px)" srcset='https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_300_169.jpg'>
-            <source media="(min-width: 0px)" srcset='https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_315_158.jpg'>
-            <img class="popup-img lazyload" src="https://images.aws.nestle.recipes/resized/4cdc8a73516386a08888a432adbb7af0_A42I2602_365_182.jpg" alt=""/>
-        </picture>
-        </div>
-        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
-            <div class="rec ">
-            <h3 class="js-mg-recipe-info mg-recipe-info ">Shahi Paneer Recipe</h3>
-            <div class="reci_score">
-                              </div>
-            
-            </div>
-
-                        <div class="mg-recipe-stats">
-                                                <span class="js-recipe-star" role="img" aria-label="The recipe was given a rating of 4.3 stars"><div class="mg-stars"> 
-         <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-           
-<span class=" mg-half-stars">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19.97 19.06" style="enable-background:new 0 0 19.97 19.06;" xml:space="preserve">
-        <path fill = "#ccc" d="M10,0L10,0c0.25,0,0.48,0.14,0.59,0.37l2.73,5.52l6.09,0.89c0.25,0.04,0.46,0.21,0.54,0.45c0.08,0.24,0.01,0.5-0.17,0.68  l-4.41,4.3l1,6.07c0.04,0.25-0.06,0.5-0.26,0.65c-0.2,0.15-0.48,0.17-0.7,0.05L10,16.12"/>
-        <path fill="#FFF33E" d="M10.03,16.12L4.56,19c-0.1,0.05-0.2,0.07-0.31,0.06c-0.14,0-0.28-0.05-0.39-0.13c-0.2-0.15-0.3-0.4-0.26-0.65l1-6.07  l-4.37-4.3c-0.19-0.17-0.27-0.43-0.2-0.68c0.08-0.24,0.29-0.41,0.54-0.45l6.09-0.89l2.76-5.52C9.53,0.14,9.77-0.01,10.03,0"/>
-    </svg>
-</span>
-    </div>
-</span>
-                                                                            <span class="mg-duration js-mg-duration" role="img" aria-label="49 Min preparation">
-                        <span class="mg-clock-icon js-mg-duration-icon"></span>
-                        <span class="mg-duration-text js-mg-duration-text">49 Min</span>
-                    </span>
-                                                            <span class="mg-difficulty js-mg-difficulty" role="img" aria-label="Level of difficulty Easy">
-                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
-                        <span class="mg-difficulty-text js-mg-difficulty-text">Easy</span>
-                    </span>
-                            </div>
-        </div>
-    </a>
-                                         
-</div>
-                                                                                <div class="mg-product-card">
-    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"Butter Chicken Recipe" }'  href='https://www.maggi.in/recipes/butter-chicken/' target='_self' class="js-mg-card-link">
-        <div   class="mg-recipe-picture" >
-        <picture>
-            <source media="(min-width: 1200px)" srcset='https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_365_182.jpg'>
-            <source media="(min-width: 1024px)" srcset='https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_224_112.jpg'>
-            <source media="(min-width: 768px)" srcset='https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_300_169.jpg'>
-            <source media="(min-width: 0px)" srcset='https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_315_158.jpg'>
-            <img class="popup-img lazyload" src="https://images.aws.nestle.recipes/resized/80ec287e09ad9ce00c8a2aeb9e8a03d4_1082x461_365_182.jpg" alt=""/>
-        </picture>
-        </div>
-        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
-            <div class="rec ">
-            <h3 class="js-mg-recipe-info mg-recipe-info ">Butter Chicken Recipe</h3>
-            <div class="reci_score">
-                              </div>
-            
-            </div>
-
-                        <div class="mg-recipe-stats">
-                                                <span class="js-recipe-star" role="img" aria-label="The recipe was given a rating of 4.3 stars"><div class="mg-stars"> 
-         <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-           
-<span class=" mg-half-stars">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19.97 19.06" style="enable-background:new 0 0 19.97 19.06;" xml:space="preserve">
-        <path fill = "#ccc" d="M10,0L10,0c0.25,0,0.48,0.14,0.59,0.37l2.73,5.52l6.09,0.89c0.25,0.04,0.46,0.21,0.54,0.45c0.08,0.24,0.01,0.5-0.17,0.68  l-4.41,4.3l1,6.07c0.04,0.25-0.06,0.5-0.26,0.65c-0.2,0.15-0.48,0.17-0.7,0.05L10,16.12"/>
-        <path fill="#FFF33E" d="M10.03,16.12L4.56,19c-0.1,0.05-0.2,0.07-0.31,0.06c-0.14,0-0.28-0.05-0.39-0.13c-0.2-0.15-0.3-0.4-0.26-0.65l1-6.07  l-4.37-4.3c-0.19-0.17-0.27-0.43-0.2-0.68c0.08-0.24,0.29-0.41,0.54-0.45l6.09-0.89l2.76-5.52C9.53,0.14,9.77-0.01,10.03,0"/>
-    </svg>
-</span>
-    </div>
-</span>
-                                                                            <span class="mg-duration js-mg-duration" role="img" aria-label="75 Min preparation">
-                        <span class="mg-clock-icon js-mg-duration-icon"></span>
-                        <span class="mg-duration-text js-mg-duration-text">75 Min</span>
-                    </span>
-                                                            <span class="mg-difficulty js-mg-difficulty" role="img" aria-label="Level of difficulty Medium">
-                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
-                        <span class="mg-difficulty-text js-mg-difficulty-text">Medium</span>
-                    </span>
-                            </div>
-        </div>
-    </a>
-                                         
-</div>
-                                                                                <div class="mg-product-card">
-    <a  data-gtmevent='{"event":"recipeRecommendationsImageClicks","recipeRecommendationsImageClicks":"Vegetable Biryani Recipe" }'  href='https://www.maggi.in/recipes/vegetable-biryani/' target='_self' class="js-mg-card-link">
-        <div   class="mg-recipe-picture" >
-        <picture>
-            <source media="(min-width: 1200px)" srcset='https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_365_182.jpg'>
-            <source media="(min-width: 1024px)" srcset='https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_224_112.jpg'>
-            <source media="(min-width: 768px)" srcset='https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_300_169.jpg'>
-            <source media="(min-width: 0px)" srcset='https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_315_158.jpg'>
-            <img class="popup-img lazyload" src="https://images.aws.nestle.recipes/resized/d18ef6d5a569eea1c298d28171c8fadb_A42I2016_365_182.jpg" alt=""/>
-        </picture>
-        </div>
-        <div class="js-mg-product-card-text mg-recipe-info-wrapper">
-            <div class="rec ">
-            <h3 class="js-mg-recipe-info mg-recipe-info ">Vegetable Biryani Recipe</h3>
-            <div class="reci_score">
-                              </div>
-            
-            </div>
-
-                        <div class="mg-recipe-stats">
-                                                <span class="js-recipe-star" role="img" aria-label="The recipe was given a rating of 4.3 stars"><div class="mg-stars"> 
-         <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-             <span class=" active">
-        <svg viewbox="0 0 19.97 19.06">
-            <path fill = "#ccc" xmlns="http://www.w3.org/2000/svg" d="M4.22,19.06a.65.65,0,0,1-.39-.13.68.68,0,0,1-.26-.65l1-6.07L.2,7.91A.66.66,0,0,1,0,7.23a.68.68,0,0,1,.54-.45l6.09-.89L9.39.37A.65.65,0,0,1,10,0h0a.65.65,0,0,1,.59.37l2.73,5.52,6.09.89a.68.68,0,0,1,.54.45.66.66,0,0,1-.17.68l-4.41,4.3,1,6.07a.68.68,0,0,1-.26.65.66.66,0,0,1-.7.05L10,16.12,4.53,19A.65.65,0,0,1,4.22,19.06Z"/>  
-        </svg>
-    </span>
-           
-<span class=" mg-half-stars">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 19.97 19.06" style="enable-background:new 0 0 19.97 19.06;" xml:space="preserve">
-        <path fill = "#ccc" d="M10,0L10,0c0.25,0,0.48,0.14,0.59,0.37l2.73,5.52l6.09,0.89c0.25,0.04,0.46,0.21,0.54,0.45c0.08,0.24,0.01,0.5-0.17,0.68  l-4.41,4.3l1,6.07c0.04,0.25-0.06,0.5-0.26,0.65c-0.2,0.15-0.48,0.17-0.7,0.05L10,16.12"/>
-        <path fill="#FFF33E" d="M10.03,16.12L4.56,19c-0.1,0.05-0.2,0.07-0.31,0.06c-0.14,0-0.28-0.05-0.39-0.13c-0.2-0.15-0.3-0.4-0.26-0.65l1-6.07  l-4.37-4.3c-0.19-0.17-0.27-0.43-0.2-0.68c0.08-0.24,0.29-0.41,0.54-0.45l6.09-0.89l2.76-5.52C9.53,0.14,9.77-0.01,10.03,0"/>
-    </svg>
-</span>
-    </div>
-</span>
-                                                                            <span class="mg-duration js-mg-duration" role="img" aria-label="67 Min preparation">
-                        <span class="mg-clock-icon js-mg-duration-icon"></span>
-                        <span class="mg-duration-text js-mg-duration-text">67 Min</span>
-                    </span>
-                                                            <span class="mg-difficulty js-mg-difficulty" role="img" aria-label="Level of difficulty Medium">
-                        <span class="mg-difficulty-icon js-mg-difficulty-icon"></span>
-                        <span class="mg-difficulty-text js-mg-difficulty-text">Medium</span>
-                    </span>
-                            </div>
-        </div>
-    </a>
-                                         
-</div>
-                                                </div>
-            <div class="show-for-sr js-carousal-status" aria-live="polite" data-status-text="Showing new items"></div>
-        </div>
-                    <div class="cell small-24 mg-btn-wrapper">
-                
-                                                    
-                <a data-gtmevent='{"event":"recipeRecommendationsLoadAll","recipeRecommendationsLoadAll":"View All Recipes" }'  href=" /recipes/restaurant-style-home/ " class="mg-btn small dark" title="Restaurant Style At Home" target="_self"  rel="follow"    >
-	<div>
-					View All Recipes
-							</div>
+<div class="nav-platform-left fs2020">
+<ul>
+<li>
+<a class="active-platform" href="javascript:void(0);" target="_self">
+BWF Fan Zone </a>
+</li>
+<li>
+<a class="" href="https://bwfworldtour.bwfbadminton.com" target="_self">
+HSBC BWF World Tour </a>
+</li>
+<li>
+<a class="" href="https://bwfworldchampionships.bwfbadminton.com" target="_self">
+TotalEnergies BWF World Championships </a>
+</li>
+<li class="nav-platform-sub-1">
+<a href="#" class="">More <span>▾</span></a>
+<ul class="arrow-box-top">
+<li>
+<a class="" href="https://bwfthomasubercups.bwfbadminton.com" target="_self">
+TotalEnergies BWF Thomas & Uber Cup Finals </a>
+</li>
+<li>
+<a class="" href="https://bwfworldtourfinals.bwfbadminton.com" target="_self">
+HSBC BWF World Tour Finals </a>
+</li>
+<li>
+<a class="" href="https://olympics.bwfbadminton.com" target="_self">
+Tokyo 2020 Olympics </a>
+ </li>
+<li>
+<a class="" href="https://bwfsudirmancup.bwfbadminton.com" target="_self">
+TotalEnergies BWF Sudirman Cup Finals </a>
+</li>
+<li class="nav-platform-sub-2">
+<a id="platform-sublink-1" href="#">
+<span>Sport For All</span>
+<span>▸</span>
 </a>
-            </div>
-            </div>
+<ul id="platform-sublist-1" class="arrow-box-left">
+<li>
+<a href="https://development.bwfbadminton.com">
+Development </a>
+</li>
+<li>
+<a href="https://shuttletime.bwfbadminton.com">
+Shuttle Time </a>
+</li>
+</ul>
+</li>
+<li class="nav-platform-sub-2">
+<a id="platform-sublink-2" href="#">
+<span>Members & Officials</span>
+<span>▸</span>
+</a>
+<ul id="platform-sublist-2" class="arrow-box-left">
+<li>
+<a href="https://corporate.bwfbadminton.com">
+BWF Corporate </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="nav-platform-right">
+<ul>
+
+<li>
+<a href="https://www.facebook.com/bwfbadminton" target="_blank" alt="BWF Facebook" title="BWF Facebook">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/facebook.svg" onmouseover="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/facebook_black.svg'" onmouseout="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/facebook.svg'" />
+</a>
+</li>
+<li>
+<a href="https://twitter.com/bwfmedia" target="_blank" alt="BWF Twitter" title="BWF Twitter">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/twitter.svg" onmouseover="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/twitter_black.svg'" onmouseout="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/twitter.svg'" />
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/bwf.official/" target="_blank" alt="BWF Instagram" title="BWF Instagram">
+ <img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/instagram.svg" onmouseover="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/instagram_black.svg'" onmouseout="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/instagram.svg'" />
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/bwf" target="_blank" alt="BWF YouTube" title="BWF YouTube">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/youtube_red.svg" onmouseover="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/youtube_red.svg'" onmouseout="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/youtube_red.svg'" />
+</a>
+</li>
+<li>
+<a href="https://weibo.com/BWFofficial" target="_blank" alt="BWF Weibo" title="BWF Weibo">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/weibo.svg" onmouseover="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/weibo_black.svg'" onmouseout="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/weibo.svg'" />
+</a>
+</li>
+<li>
+<a href="https://t.qq.com/BWFbadminton" target="_blank" alt="BWF Tencent Weibo" title="BWF Tencent Weibo">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/tencent-weibo.svg" onmouseover="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/tencent-weibo_black.svg'" onmouseout="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/tencent-weibo.svg'" />
+</a>
+</li>
+<li>
+<a href="https://bwfbadminton.us12.list-manage.com/subscribe?u=73460b7def03b0639c64e732c&id=092d7e95a1" target="_blank" alt="BWF Newsletter signup" title="BWF Newsletter signup">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/icon-email-grey.svg" onmouseover="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/icon-email-black.svg'" onmouseout="this.src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/icon-email-grey.svg'" />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="nav-site-wrap">
+<div class="nav-site-outer nav-menu-fs">
+<div class="nav-site-inner">
+
+<div class="nav-site-logo fs2020">
+<a href="https://bwfbadminton.com" alt="Home page" title="Home page">
+<img class="desktop-main-logo" src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/logo-bwf-rgb.svg" />
+<img class="desktop-alt-logo" src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/bwf-logo.svg" />
+</a>
+</div>
+
+<div class="nav-site-menu fs2020" style="font-size: 15px;">
+
+<div class="menu-main-menu-container"><ul id="menu-all-pages" class="site-top-menu"><li id="menu-item-33925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33925 menu-item-rankings first-menu-item"><a href="https://bwfbadminton.com/rankings/">Rankings</a></li>
+<li id="menu-item-33949" class="menu-calendar menu-item menu-item-type-post_type menu-item-object-page menu-item-33949 menu-item-calendar "><a href="https://bwfbadminton.com/calendar/">Calendar</a></li>
+<li id="menu-item-33929" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33929 menu-item-players "><a href="https://bwfbadminton.com/players/">Players</a></li>
+<li id="menu-item-33928" class="menu-news menu-item menu-item-type-post_type menu-item-object-page menu-item-33928 menu-item-news "><a href="https://bwfbadminton.com/news/">News &#038; Media</a></li>
+<li id="menu-item-34044" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34044 menu-item-match-centre "><a target="_blank" rel="noopener" href="https://match-centre.bwfbadminton.com/4524">Match Centre</a></li>
+<li id="menu-item-34158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34158 menu-item-%e4%b8%ad%e6%96%87 last-menu-item"><a href="https://bwfbadminton.com/zh-cn">中文</a></li>
+</ul></div>
+
+<div class="nav-site-search">
+<div class="search-box">
+<form method="get" id="searchdesktopform">
+<input type="text" class="field" name="search-desktop" id="search-desktop" value="" placeholder="Search BWF" />
+<span id="searchclear"><i class="fa fa-fw fa-times-circle" aria-hidden="true"></i></span>
+<span class="search-border">&nbsp;</span>
+</form>
+</div>
+<img class="search-desktop-open" src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/search.svg" />
+<img class="search-desktop-close" src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/search-close.svg" />
+<div class="search-dropdown-wrap">
+<div class="search-loader">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/ajax-loader.svg" />
+</div>
+<div class="search-message">
+<div class="search-message-text">
+Please fill in at least 3 characters
+</div>
+</div>
+<div class="search-results-wrap">
+<div class="search-results-news">
+<h2><i class="fa fa-fw fa-bell" aria-hidden="true"></i> News</h2>
+<ul></ul>
+</div>
+<div class="search-results-players">
+<h2><i class="fa fa-fw fa-user" aria-hidden="true"></i> Players</h2>
+<ul></ul>
+</div>
+<div class="search-results-tournaments">
+<h2><i class="fa fa-fw fa-trophy" aria-hidden="true"></i> Tournaments</h2>
+<ul></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="nav-site-filler filler-fs">
+<div class="menu-next-tmt-outer">
+
+<a href="https://corporate.bwfbadminton.com/news-single/2020/02/28/covid-19-updates/" alt="Link to important information" title="Link to important information">
+<i class="fa fa-fw fa-lg fa-exclamation-circle" aria-hidden="true"></i> Important: COVID-19 Information
+</a>
+
+<a href="https://bwfworldchampionships.bwfbadminton.com/results/4524/totalenergies-bwf-world-championships-2022/results/" alt="Link to TotalEnergies BWF World Championships 2022" title="Link to TotalEnergies BWF World Championships 2022">
+LIVE:
+TotalEnergies BWF World Championships 2022 </a>
+</div>
+</div>
+</div>
+</header>
+
+<header id="top-menu-mobile" class="menu-main-mobile">
+
+<div id="nav-platform-bar" class="nav-platform-outer">
+<div class="nav-platform-inner">
+
+<div class="nav-platform">
+<ul>
+<li class="nav-platform-sub-1">
+
+<a href="#" class="active-platform main-active" style="z-index: 9;">
+<span class="mobile-more-text">BWF Fan Zone</span>
+<span class="mobile-more-arrow"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+</a>
+<ul class="arrow-box-top">
+<li>
+<a class="active-platform" href="javascript:void(0);" target="_self">
+BWF Fan Zone </a>
+</li>
+<li>
+<a class="" href="https://bwfworldtour.bwfbadminton.com" target="_self">
+HSBC BWF World Tour </a>
+</li>
+<li>
+<a class="" href="https://bwfworldchampionships.bwfbadminton.com" target="_self">
+TotalEnergies BWF World Championships </a>
+</li>
+<li>
+<a class="" href="https://bwfthomasubercups.bwfbadminton.com" target="_self">
+TotalEnergies BWF Thomas & Uber Cup Finals </a>
+</li>
+<li>
+<a class="" href="https://bwfworldtourfinals.bwfbadminton.com" target="_self">
+HSBC BWF World Tour Finals </a>
+</li>
+ <li>
+<a class="" href="https://olympics.bwfbadminton.com" target="_self">
+Tokyo 2020 Olympics </a>
+</li>
+<li>
+<a class="" href="https://bwfsudirmancup.bwfbadminton.com" target="_self">
+TotalEnergies BWF Sudirman Cup Finals </a>
+</li>
+<li class="nav-platform-sub-2">
+<a href="#">
+<span>Sport For All</span>
+<span class="nav-platform-sub-2-arrow"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+</a>
+<ul class="">
+<li>
+<a href="https://development.bwfbadminton.com">
+Development </a>
+</li>
+<li>
+<a href="https://shuttletime.bwfbadminton.com">
+Shuttle Time </a>
+</li>
+</ul>
+</li>
+<li class="nav-platform-sub-2">
+<a href="#">
+<span>Members & Officials</span>
+<span class="nav-platform-sub-2-arrow"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+</a>
+<ul class="">
+<li>
+<a href="https://corporate.bwfbadminton.com">
+BWF Corporate </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="nav-site-wrap">
+<div class="nav-site-outer nav-menu-fs">
+<div class="nav-site-inner">
+
+<div class="nav-site-logo">
+<a href="https://bwfbadminton.com" alt="Home page" title="Home page">
+<img class="fs2020" src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/logo-bwf-rgb.svg" />
+</a>
+</div>
+
+<div class="nav-site-search">
+<div class="search-box">
+<form method="get" id="searchmobileform">
+<input type="text" class="field" name="search-mobile" id="search-mobile" value="" placeholder="Search BWF" />
+<span id="searchclear"><i class="fa fa-fw fa-times-circle" aria-hidden="true"></i></span>
+</form>
+ </div>
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/search_grey.svg" />
+<div class="search-dropdown-wrap">
+<div class="search-loader">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/ajax-loader.svg" />
+</div>
+<div class="search-message">
+<div class="search-message-text">
+Please fill in at least 3 characters
+</div>
+</div>
+<div class="search-results-wrap">
+<div class="search-results-news">
+<h2><i class="fa fa-fw fa-bell" aria-hidden="true"></i> News</h2>
+<ul></ul>
+</div>
+<div class="search-results-players">
+<h2><i class="fa fa-fw fa-user" aria-hidden="true"></i> Players</h2>
+<ul></ul>
+</div>
+<div class="search-results-tournaments">
+<h2><i class="fa fa-fw fa-trophy" aria-hidden="true"></i> Tournaments</h2>
+<ul></ul>
+</div>
+</div>
+</div>
+</div>
+
+<button class="hamburger hamburger--collapse" type="button">
+<span class="hamburger-box">
+<span class="hamburger-inner"></span>
+</span>
+</button>
+</div>
+
+<div class="nav-site-menu nav-menu-fs">
+
+<div class="menu-main-menu-container"><ul id="menu-all-pages" class="site-top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33925"><a href="https://bwfbadminton.com/rankings/">Rankings</a></li>
+<li class="menu-calendar menu-item menu-item-type-post_type menu-item-object-page menu-item-33949"><a href="https://bwfbadminton.com/calendar/">Calendar</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33929"><a href="https://bwfbadminton.com/players/">Players</a></li>
+<li class="menu-news menu-item menu-item-type-post_type menu-item-object-page menu-item-33928"><a href="https://bwfbadminton.com/news/">News &#038; Media</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34044"><a target="_blank" rel="noopener" href="https://match-centre.bwfbadminton.com/4524">Match Centre</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34158"><a href="https://bwfbadminton.com/zh-cn">中文</a></li>
+</ul></div>
+
+<div class="nav-platform-social">
+<ul>
+<li>
+<a href="https://www.facebook.com/bwfbadminton" target="_blank" alt="BWF Facebook">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/facebook_white.svg" />
+</a>
+</li>
+<li>
+<a href="https://twitter.com/bwfmedia" target="_blank" alt="BWF Twitter">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/twitter_white.svg" />
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/bwf.official/" target="_blank" alt="BWF Instagram">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/instagram_white.svg" />
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/bwf" target="_blank" alt="BWF YouTube">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/youtube_white_new.svg" />
+</a>
+</li>
+<li>
+<a href="https://weibo.com/BWFofficial" target="_blank" alt="BWF Weibo">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/weibo_white.svg" />
+</a>
+</li>
+<li>
+<a href="https://t.qq.com/BWFbadminton" target="_blank" alt="BWF Tencent Weibo">
+<img src="https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/images/tencent-weibo_white.svg" />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</header>
+</section>
+<div class="wrapper">
+<div id="app">
+<v-app>
+<template>
+
+<section class="home-banner container-fullwidth">
+
+
+
+
+<div class="container-fullwidth">
+<div class="news--landing news--featured">
+<a href="https://bwfworldchampionships.bwfbadminton.com/news-single/2022/08/23/soniia-cheah-rediscovers-the-joy-of-badminton/" title="Soniia Cheah Rediscovers the Joy of Badminton">
+<picture>
+<source media="(min-width: 768px)" srcset="https://bwfbadminton.com/wp-content/uploads/2022/08/WC22_Soniia-Cheah-1280x550.jpg">
+<source media="(max-width: 767px)" srcset="https://bwfbadminton.com/wp-content/uploads/2022/08/WC22_Soniia-Cheah-400x310.jpg">
+<img src="https://bwfbadminton.com/wp-content/uploads/2022/08/WC22_Soniia-Cheah-1280x550.jpg" alt="BWF News">
+</picture>
+
+<div class="news-image-gradient"></div>
+
+<div class="news--featured-outer">
+<div class="news--featured-inner">
+<div class="intro">
+<h2>Soniia Cheah Rediscovers the Joy of Badminton</h2>
+<p>There was, in Soniia Cheah’s victory on Tuesday, the elemental joy of playing that she had only recently rediscovered. The&hellip;</p>
+<div class="home-news-red-slash"></div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+
+
 </section>
 
-           
-        <section class="grid-container mg-teaser-content ">
-        <div class="grid-x">
-            <div class="cell small-24 medium-20 medium-offset-2 mg-teaser-content__container left">
-                <div class="mg-teaser-content__container-img left">
-                      
-                                           <a target="_blank" href=" https://www.deshkeliye.maggi.in/ "> 
-                            <picture>
-                                <source media="(min-width: 1200px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=MgJmfzFK'>
-                                <source media="(min-width: 1024px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_392_380/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=PJWUNZsL'>
-                                <source media="(min-width: 768px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_588_331/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=JbHlMbCH'>
-                                <source media="(min-width: 0px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_315_256/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=5JTqrIP_'>
-                                <img class="lazyload" alt="MAGGI DKL Banner -Final" data-src='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Global_banner_DHK.jpg?h=4f5b30f1&amp;itok=MgJmfzFK'>
-                            </picture>
-                        </a>
-                                    </div>
-                <div class="mg-teaser-content__container-des left">
-                                            <h2>Apna Food Business</h2>
-                                                                                    <div class="description">
-                            From the shortlisted top 20 participants in stage 3, top 5 winners each from both categories - Food Delivery Business and Online Food Channel have been selected basis the business plan submitted by them. To explore the winners from Stage 3, visit www.deshkeliye.maggi.in.  
-                        </div>
-                                        <div class="redirect-btn">
-                                                                                                                                        <a  href=" https://www.deshkeliye.maggi.in/ " class="mg-btn dark" title="Visit Now" target="_blank"  rel="follow"    aria-label="Visit Now Apna Food Business"  >
-	<div>
-					Visit Now
-							</div>
+<section class="home-news container-sitewidth">
+
+<h2 class="title-link">
+<a href="https://bwfbadminton.com/news/">
+{{ $t('Latest Stories') }}
 </a>
-                                                                    </div>    
-                </div>
-            </div>
-        </div>
-    </section>
+</h2>
+<div class="home-news-grid">
 
-           	<section class="grid-container mg-teaser-full no-margin-from-bottom  theme-light ">
-		<div class="grid-x ">
-			<div class="cell small-24  mg-teaser-full-full   mg-gutter-container ">
-								<picture>
-					<source media="(min-width: 1200px)" data-srcset="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_desktop/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=MKuiwx5c">
-					<source media="(min-width: 1024px)" data-srcset="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_landscape/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=-LsFvI2h">
-					<source media="(min-width: 768px)" data-srcset="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_portrait/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=U5YzqYJT">
-					<source media="(min-width: 0)" data-srcset="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_mobile/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=IitzXhL1">					
-					<img data-src="https://www.maggi.in/sites/default/files/styles/maggi_teaser_full_landscape/public/A42I7745%281082x461%29px_0.jpg?h=cc530b4d&amp;itok=-LsFvI2h" alt="MAGGI Noodles Salsa - 1" width="100%" class="lazyload">	
-				</picture>
-								<div class="grid-x mg-teaser-full__desc ">
-										<div class="small-24">
-													<h2>Your favourite MAGGI Noodles like never before!</h2>
-																			<p>#LetsMakeMaggi</p>
-																		  						  															<a  href=" /recipes/maggi-noodles/ " class="mg-btn small" title="View All Recipes" target="_self"  rel="follow"    aria-label="View All Recipes Your favourite MAGGI Noodles like never before!"  >
-	<div>
-					View All Recipes
-							</div>
+
+<div class="feature-image">
+<a href="https://bwfworldchampionships.bwfbadminton.com/news-single/2022/08/23/if-youre-afraid-you-cannot-play/" title="‘If You&#8217;re Afraid You Cannot Play’">
+<picture>
+<source media="(min-width: 768px)" srcset="https://bwfbadminton.com/wp-content/uploads/2022/08/WC22_Beiwen-Zhang-613x290.jpg">
+<source media="(max-width: 767px)" srcset="https://bwfbadminton.com/wp-content/uploads/2022/08/WC22_Beiwen-Zhang-400x310.jpg">
+<img src="https://bwfbadminton.com/wp-content/uploads/2022/08/WC22_Beiwen-Zhang-613x290.jpg" alt="BWF News">
+</picture>
 </a>
-																				
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
-
-           
-        <section class="grid-container mg-teaser-content ">
-        <div class="grid-x">
-            <div class="cell small-24 medium-20 medium-offset-2 mg-teaser-content__container left">
-                <div class="mg-teaser-content__container-img left">
-                      
-                                           <a target="_self" href=" /recipes/matar-paneer/ "> 
-                            <picture>
-                                <source media="(min-width: 1200px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=T42jLYsX'>
-                                <source media="(min-width: 1024px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_392_380/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=OA15a_--'>
-                                <source media="(min-width: 768px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_588_331/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=6BvkwnvX'>
-                                <source media="(min-width: 0px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_315_256/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=Gcle12TI'>
-                                <img class="lazyload" alt="Matar Paneer" data-src='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Everyday%20Specials.jpg?h=b7ff6663&amp;itok=T42jLYsX'>
-                            </picture>
-                        </a>
-                                    </div>
-                <div class="mg-teaser-content__container-des left">
-                                            <h2>Everyday Specials</h2>
-                                                                <p>Matar Paneer</p>
-                                                                <div class="description">
-                            Be it a simple weekday lunch or a fancy dinner party, a well-made Matar Paneer is always a delight!  
-                        </div>
-                                        <div class="redirect-btn">
-                                                                                                                                        <a  href=" /recipes/matar-paneer/ " class="mg-btn dark" title="Try It" target="_self"  rel="follow"    aria-label="Try It Everyday Specials"  >
-	<div>
-					Try It
-							</div>
-</a>
-                                                                    </div>    
-                </div>
-            </div>
-        </div>
-    </section>
-
-           
-        <section class="grid-container mg-teaser-content ">
-        <div class="grid-x">
-            <div class="cell small-24 medium-20 medium-offset-2 mg-teaser-content__container left">
-                <div class="mg-teaser-content__container-img left">
-                      
-                                           <a target="_self" href=" /recipes/easy-snacks/ "> 
-                            <picture>
-                                <source media="(min-width: 1200px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=wLH6NrU5'>
-                                <source media="(min-width: 1024px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_392_380/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=X9DkRlom'>
-                                <source media="(min-width: 768px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_588_331/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=cNjGWCkb'>
-                                <source media="(min-width: 0px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_315_256/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=wkdgEgsL'>
-                                <img class="lazyload" alt="Easy Snack" data-src='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Easy%20Snacks.jpg?h=b7ff6663&amp;itok=wLH6NrU5'>
-                            </picture>
-                        </a>
-                                    </div>
-                <div class="mg-teaser-content__container-des left">
-                                            <h2>Easy Snacks</h2>
-                                                                                    <div class="description">
-                            Lip-smacking snacks for delightful evenings with your family! 
-                        </div>
-                                        <div class="redirect-btn">
-                                                                                                                                        <a  href=" /recipes/easy-snacks/ " class="mg-btn dark" title="View All Recipes" target="_self"  rel="follow"    aria-label="View All Recipes Easy Snacks"  >
-	<div>
-					View All Recipes
-							</div>
-</a>
-                                                                    </div>    
-                </div>
-            </div>
-        </div>
-    </section>
-
-           
-        <section class="grid-container mg-teaser-content ">
-        <div class="grid-x">
-            <div class="cell small-24 medium-20 medium-offset-2 mg-teaser-content__container left">
-                <div class="mg-teaser-content__container-img left">
-                      
-                                           <a target="_self" href=" /recipes/quick-easy/ "> 
-                            <picture>
-                                <source media="(min-width: 1200px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=qQIPzAdq'>
-                                <source media="(min-width: 1024px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_392_380/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=DwvI1Uf9'>
-                                <source media="(min-width: 768px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_588_331/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=5XLLQ0Q5'>
-                                <source media="(min-width: 0px)" data-srcset='https://www.maggi.in/sites/default/files/styles/teaser_content_315_256/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=QR_gQb-s'>
-                                <img class="lazyload" alt="Chicken Manchurian" data-src='https://www.maggi.in/sites/default/files/styles/teaser_content_624_500/public/Chicken-Manchurian-%28621x498%29.jpg?h=b7ff6663&amp;itok=qQIPzAdq'>
-                            </picture>
-                        </a>
-                                    </div>
-                <div class="mg-teaser-content__container-des left">
-                                            <h2>Quick and Easy</h2>
-                                                                                    <div class="description">
-                            Delightfully simple to prepare, there’s something for everyone in these quick and easy breakfast, lunch, and dinner recipes! 
-                        </div>
-                                        <div class="redirect-btn">
-                                                                                                                                        <a  href=" /recipes/quick-easy/ " class="mg-btn dark" title="View All Recipes" target="_self"  rel="follow"    aria-label="View All Recipes Quick and Easy"  >
-	<div>
-					View All Recipes
-							</div>
-</a>
-                                                                    </div>    
-                </div>
-            </div>
-        </div>
-    </section>
-
-      
-  
-							<div class="grid-x mg-secondary-block">
-								<div class="cell small-24 medium-20 medium-offset-2">
-									  
-								</div>
-							</div>
-							<div class="grid-x mg-secondary-block">
-								<div class="cell small-24">
-									<div class="grid-x">
-										<div class="cell small-24 medium-offset-2 medium-9 xlarge-6 mg-tag-left-block">
-																					</div>
-										<div class="cell small-24 medium-10 medium-offset-1 xlarge-offset-2 xlarge-12">
-																					</div>
-									</div>
-								</div>
-								<div class="cell small-24">
-									<footer id="footer">
-										  <section class="grid-container no-margin mg-footer">
-    <input type="hidden" id="translatedTemplateString" value=""
-      data-aria-star-rating="The recipe was given a rating of {X} stars"
-      data-aria-preparation="preparation"
-      data-aria-difficulty="Level of difficulty"
-      data-selected-filter="{X} attributes selected"
-      data-choose-filter="choose filters"
-      data-filter-overlay="filter overlay"
-      data-close-filter-overlay="close filter overlay"
-      data-ingredient-overlay="ingredient overlay"
-      data-close-ingredient-overlay="close ingredient overlay"
-    />
-    <input type="hidden" id="score_label" value="of 100"/>
-    <div class="grid-x mg-footer__block">
-
-          
-
-<div class="cell   small-24 medium-20 medium-offset-2 large-6 xlarge-9 ">
-    <div class="mg-footer__block-icon ">
-                            <ul>
-                                                        <li>
-                                            <a rel="follow" href="https://www.facebook.com/MeriMaggiIndia/" data-url="" title="Facebook" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Facebook" }' class=" facebook  background--social-icons-bg-color hover-effect ">
-                            <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/facebook.svg" alt="Facebook">
-                        </a>
-                                            </li>
-                                                        <li>
-                                            <a rel="follow" href="https://www.youtube.com/user/MeriMAGGI/featured/" data-url="" title="Youtube" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Youtube" }' class=" youtube  background--social-icons-bg-color hover-effect ">
-                            <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-01/youtube.svg" alt="Youtube">
-                        </a>
-                                            </li>
-                                                        <li>
-                                            <a rel="follow" href="https://www.instagram.com/maggiindia/" data-url="" title="Instagram" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Instagram" }' class=" instagram  background--social-icons-bg-color hover-effect ">
-                            <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-02/instagram.svg" alt="Instagram">
-                        </a>
-                                            </li>
-                                                        <li>
-                                            <a rel="follow" href="https://twitter.com/MaggiIndia/" data-url="" title="Twitter" target="_blank" data-gtmevent='{"event":"social","social":"outboundLinks","socialChannel":"Twitter" }' class=" twitter  background--social-icons-bg-color hover-effect ">
-                            <img class="lazyload" data-src="https://www.maggi.in/sites/default/files/2020-03/Twitter%20%281%29.svg" alt="Twitter">
-                        </a>
-                                            </li>
-                                            </ul>
-            </div>
-</div>
-<div class="cell small-24 medium-9 medium-offset-2 large-offset-0 large-7 xlarge-6">
-    <div class="mg-footer__block-link footer-links">
-        <ul>
-                                            <li>
-                    <a rel="" href="https://www.maggi.in/contact_us" class="footer-link mg-grey" title="Contact Us" target="_self">
-                        Contact Us
-                    </a>
-                </li>
-                                            <li>
-                    <a rel="" href="/copyright/" class="footer-link mg-grey" title="Copyright" target="_self">
-                        Copyright
-                    </a>
-                </li>
-                    </ul>
-    </div>
-</div>
-<div class="cell small-24 medium-9 medium-offset-2 large-offset-0 large-7 xlarge-6">
-    <div class="mg-footer__block-link footer-links">
-        <ul>
-                                            <li>
-                    <a rel="" href="/terms-of-use/" class="footer-link mg-grey" title="Terms and Conditions" target="_blank">
-                        Terms and Conditions
-                    </a>
-                </li>
-                                            <li>
-                    <a rel="" href="/privacy-policy/" class="footer-link mg-grey" title="Privacy Policy" target="_self">
-                        Privacy Policy
-                    </a>
-                </li>
-                    </ul>
-    </div>
 </div>
 
+<div class="feature-text">
+<h2 class="title-featured">{{ $t('Featured') }}</h2>
+<a href="https://bwfworldchampionships.bwfbadminton.com/news-single/2022/08/23/if-youre-afraid-you-cannot-play/" title="‘If You&#8217;re Afraid You Cannot Play’">
+<h2>
+‘If You&#8217;re Afraid You Cannot Play’ </h2>
+</a>
 
-<div class="mg-footer__copyright cell small-24 medium-20 medium-offset-2">
-                
+<div class="news-individual-meta-wrap">
+<div class="related-news-label">
+6h &nbsp;&nbsp;|&nbsp;&nbsp;
+<span>
+<a href="https://bwfbadminton.com/news/?label=news">
+news </a>
+</span>
+<span>
+<a href="https://bwfbadminton.com/news/?label=tournament">
+tournament </a>
+</span>
+</div>
+<div class="related-news-target">
+<i class="fas fa-fw fa-external-link-alt"></i> World Championships </div>
+</div>
+</div>
+
+<aside class="recent">
+<div class="related-news">
+
+<div class="news-individual">
+<a href="https://bwfworldchampionships.bwfbadminton.com/news-single/2022/08/23/training-through-civil-unrest-karunaratne-keeps-going/" title="Training Through Civil Unrest, Karunaratne Keeps Going">
+
+<div class="related-news-thumb">
+<img src="https://bwfbadminton.com/wp-content/uploads/2022/08/WC22_Niluka-Karunaratne2-400x310.jpg" alt="Training Through Civil Unrest, Karunaratne Keeps Going" class="smlthumb">
+
+</div>
+
+<div class="related-news-text">
+<h3 class="related-news-title">
+Training Through Civil Unrest, Karunaratne Keeps Going </h3>
+</div>
+</a>
+
+<div class="news-individual-meta-wrap">
+<div class="related-news-label">
+2h &nbsp;&nbsp;|&nbsp;&nbsp;
+<span>
+<a href="https://bwfbadminton.com/news/?label=news">
+news </a>
+</span>
+</div>
+<div class="related-news-target">
+<i class="fas fa-fw fa-external-link-alt"></i> World Championships </div>
+</div>
+</div>
+
+<div class="news-individual">
+<a href="https://bwfworldchampionships.bwfbadminton.com/news-single/2022/08/22/two-day-ordeal-but-munoz-relishes-opportunity/" title="Two-Day Ordeal, But Munoz Relishes Opportunity">
+
+<div class="related-news-thumb">
+<img src="https://bwfbadminton.com/wp-content/uploads/2022/08/WC_Lino-Munoz-400x310.jpg" alt="Two-Day Ordeal, But Munoz Relishes Opportunity" class="smlthumb">
+
+</div>
+
+<div class="related-news-text">
+<h3 class="related-news-title">
+Two-Day Ordeal, But Munoz Relishes Opportunity </h3>
+</div>
+</a>
+
+<div class="news-individual-meta-wrap">
+<div class="related-news-label">
+14h &nbsp;&nbsp;|&nbsp;&nbsp;
+<span>
+<a href="https://bwfbadminton.com/news/?label=news">
+news </a>
+</span>
+<span>
+<a href="https://bwfbadminton.com/news/?label=tournament">
+tournament </a>
+</span>
+</div>
+<div class="related-news-target">
+<i class="fas fa-fw fa-external-link-alt"></i> World Championships </div>
+</div>
+</div>
+
+<div class="news-individual">
+<a href="https://bwfworldchampionships.bwfbadminton.com/news-single/2022/08/22/on-comeback-trail-antonsen-stumbles-to-nishimoto/" title="On Comeback Trail, Antonsen Stumbles to Nishimoto">
+
+<div class="related-news-thumb">
+<img src="https://bwfbadminton.com/wp-content/uploads/2022/08/WC_Kenta-Nishimoto-400x310.jpg" alt="On Comeback Trail, Antonsen Stumbles to Nishimoto" class="smlthumb">
+
+</div>
+
+<div class="related-news-text">
+<h3 class="related-news-title">
+ On Comeback Trail, Antonsen Stumbles to Nishimoto </h3>
+</div>
+</a>
+
+<div class="news-individual-meta-wrap">
+<div class="related-news-label">
+16h &nbsp;&nbsp;|&nbsp;&nbsp;
+<span>
+<a href="https://bwfbadminton.com/news/?label=news">
+news </a>
+</span>
+<span>
+<a href="https://bwfbadminton.com/news/?label=tournament">
+tournament </a>
+</span>
+</div>
+<div class="related-news-target">
+<i class="fas fa-fw fa-external-link-alt"></i> World Championships </div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<h3 class="all-news-link">
+<a href="https://bwfbadminton.com/news/">{{ $t('All News') }}</a>
+</h3>
+</section>
+
+<section class="home-schedule container-fullwidth">
+<div class="container-sitewidth">
+
+<h2 class="title-link">
+<a href="https://bwfbadminton.com/calendar/">
+{{ $t('Schedule') }}
+</a>
+</h2>
+<div v-if="!loading" class="schedule-wrap">
+
+<a v-bind:href="tmtPrevious.tmtLink">
+<div class="schedule-outer">
+<div class="schedule-top-wrap">
+<div class="schedule-logo">
+<img v-bind:src="tmtPrevious.tmtLogo" alt="">
+</div>
+<div class="schedule-text-info">
+<h2>{{tmtPrevious.name}}</h2>
+<h3>{{tmtPrevious.date}}</h3>
+</div>
+</div>
+<div class="schedule-bottom-wrap">
+<div v-if="tmtPrevious.catLogo" class="schedule-cat-logo">
+<img v-bind:src="tmtPrevious.catLogo" alt="">
+</div>
+<div class="schedule-label green">
+{{ $t(tmtPrevious.label) }}
+</div>
+</div>
+</div>
+</a>
+
+<a v-bind:href="tmtNextLive.tmtLink">
+<div class="schedule-outer">
+<div class="schedule-top-wrap">
+<div class="schedule-logo">
+<img v-bind:src="tmtNextLive.tmtLogo" alt="">
+</div>
+<div class="schedule-text-info">
+<h2>{{tmtNextLive.name}}</h2>
+<h3>{{tmtNextLive.date}}</h3>
+</div>
+</div>
+<div class="schedule-bottom-wrap">
+<div v-if="tmtNextLive.catLogo" class="schedule-cat-logo">
+<img v-bind:src="tmtNextLive.catLogo" alt="">
+</div>
+<div class="schedule-label red">
+{{ $t(tmtNextLive.label) }}
+</div>
+</div>
+</div>
+</a>
+
+<a v-bind:href="tmtNext.tmtLink">
+<div class="schedule-outer">
+<div class="schedule-top-wrap">
+ <div class="schedule-logo">
+<img v-bind:src="tmtNext.tmtLogo" alt="">
+</div>
+<div class="schedule-text-info">
+<h2>{{tmtNext.name}}</h2>
+<h3>{{tmtNext.date}}</h3>
+</div>
+</div>
+<div class="schedule-bottom-wrap">
+<div v-if="tmtNext.catLogo" class="schedule-cat-logo">
+<img v-bind:src="tmtNext.catLogo" alt="">
+</div>
+<div class="schedule-label grey">
+{{ $t(tmtNext.label) }}
+</div>
+</div>
+</div>
+</a>
+</div>
+<h3>
+<a href="https://bwfbadminton.com/calendar/">{{ $t('All Tournaments') }}</a>
+</h3>
+</div> </section>
+
+<section class="home-rankings container-sitewidth">
+
+<h2 class="title-link">
+<a href="https://bwfbadminton.com/rankings/?id=2">
+{{ $t('BWF World Rankings') }}
+</a>
+</h2>
+<div v-if="!loadingRanking" class="home-rank-wrap">
+
+<div class="home-rank-col">
+
+<div class="home-rank-title">
+<a href="https://bwfbadminton.com/rankings/?id=2">
+<h2>{{ $t('Badminton') }}</h2>
+</a>
+</div>
+
+<div class="home-rank-outer">
+<div class="home-rank-left player-able">
+
+<a v-if="playerHighlightAble.detail && playerHighlightAble.detail.avatar" v-bind:href="siteUrl + '/player/' + playerHighlightAble.player1_model.id + '/' + playerHighlightAble.player1_model.slug + '/'">
+<div class="home-rank-player-image">
+
+<div class="home-rank-player-title">
+<span>{{ $t('Player') }}</span>
+<span>{{ $t('Spotlight') }}</span>
+</div>
+
+<div v-if="playerHighlightAble.detail && playerHighlightAble.detail.avatar" class="playertop-row1">
+<div class="playertop-avatar">
+<img v-bind:src="playerHighlightAble.detail.avatar.url_cloudinary" />
+</div>
+<div class="playertop-name-wrap">
+<div class="playertop-name"><span v-html="playerHighlightAble.detail.name_display_break"></span></div>
+<div class="playertop-country">
+<img v-bind:src="extranetUrl + '/docs/flags-svg/' + playerHighlightAble.detail.nationality_item.flag_name_svg" v-bind:alt="playerHighlightAble.detail.nationality_item.name">
+<span>{{playerHighlightAble.detail.nationality_item.name}}</span>
+</div>
+</div>
+</div>
+</div>
+</a>
+
+<div class="home-rank-player-info-wrap">
+<div class="home-rank-player-info-rank">
+<span v-if="playerHighlightAble.ranking_category_id == 6">MS Rank</span>
+<span v-if="playerHighlightAble.ranking_category_id == 7">WS Rank</span>
+<span>{{playerHighlightAble.rank}}</span>
+</div>
+<div class="home-rank-player-info-gain">
+<span>Gained</span>
+<div class="ranking-change-outer">
+<span v-if="playerHighlightAble.rank_change > 0" class="ranking-change" style="color: green;"><i class="fas fa-lg fa-caret-up"></i> {{playerHighlightAble.rank_change | toPosNumber}}</span>
+<span v-if="playerHighlightAble.rank_change < 0" class="ranking-change" style="color: red;"><i class="fas fa-lg fa-caret-down"></i> {{playerHighlightAble.rank_change | toPosNumber}}</span>
+<span v-if="playerHighlightAble.rank_change == 0" class="ranking-change" style="color: #999; margin-left: 6px;">{{playerHighlightAble.rank_change | toPosNumber}}</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="home-rank-right">
+<table class="home-rank-table tblRankingLanding">
+<thead>
+<tr><th colspan="3">{{ $t('MS Top 10') }}</th></tr>
+</thead>
+<tbody>
+<tr v-for="(player, index) in rankAbleData">
+
+<td class="col-country">
+<div v-if="player.player1_model" class="country">
+<img v-if="player.player1_model.country_model" width="48" v-bind:src="extranetUrl + '/docs/flags-svg/' + player.player1_model.country_model.flag_name_svg" v-bind:title="player.player1_model.country_model.name">
+</div>
+</td>
+
+<td class="col-rank">
+<div class="col-rank-wrapper">
+<span class="rank-value">{{player.rank}}</span>
+</div>
+</td>
+
+<td class="col-player">
+<div class="player">
+<span v-if="player.player1_model">
+<a v-bind:href="siteUrl + '/player/' + player.player1_model.id + '/' + player.player1_model.slug + '/'">
+<span v-html="player.player1_model.name_display_bold"></span>
+</a>
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="home-rank-col">
+
+<div class="home-rank-title">
+<a href="https://bwfbadminton.com/rankings/?id=14">
+<h2>{{ $t('Para Badminton') }}</h2>
+</a>
+</div>
+
+<div class="home-rank-outer">
+<div class="home-rank-left player-para">
+
+<a v-if="playerHighlightPara.detail && playerHighlightPara.detail.avatar" v-bind:href="siteUrl + '/player/' + playerHighlightPara.player1_model.id + '/' + playerHighlightPara.player1_model.slug + '/'">
+<div class="home-rank-player-image">
+
+<div class="home-rank-player-title">
+<span>{{ $t('Player') }}</span>
+<span>{{ $t('Spotlight') }}</span>
+</div>
+
+<div v-if="playerHighlightPara.detail && playerHighlightPara.detail.avatar" class="playertop-row1">
+<div class="playertop-avatar">
+<img v-bind:src="playerHighlightPara.detail.avatar.url_cloudinary" />
+</div>
+<div class="playertop-name-wrap">
+<div class="playertop-name"><span v-html="playerHighlightPara.detail.name_display_break"></span></div>
+<div class="playertop-country">
+ <img v-bind:src="extranetUrl + '/docs/flags-svg/' + playerHighlightPara.detail.nationality_item.flag_name_svg" v-bind:alt="playerHighlightPara.detail.nationality_item.name">
+<span>{{playerHighlightPara.detail.nationality_item.name}}</span>
+</div>
+</div>
+</div>
+</div>
+</a>
+
+<div class="home-rank-player-info-wrap">
+<div class="home-rank-player-info-rank">
+<span v-if="playerHighlightPara.ranking_category_id == 82">MS WH1 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 83">WS WH1 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 87">MS WH2 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 88">WS WH2 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 89">MS SL3 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 90">WS SL3 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 94">MS SL4 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 95">WS SL4 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 96">MS SU5 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 97">WS SU5 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 99">MS SH6 Rank</span>
+<span v-if="playerHighlightPara.ranking_category_id == 100">WS SH6 Rank</span>
+<span>{{playerHighlightPara.rank}}</span>
+</div>
+<div class="home-rank-player-info-gain">
+<span>Gained</span>
+<div class="ranking-change-outer">
+<span v-if="playerHighlightPara.rank_change > 0" class="ranking-change" style="color: green;"><i class="fas fa-lg fa-caret-up"></i> {{playerHighlightPara.rank_change | toPosNumber}}</span>
+<span v-if="playerHighlightPara.rank_change < 0" class="ranking-change" style="color: red;"><i class="fas fa-lg fa-caret-down"></i> {{playerHighlightPara.rank_change | toPosNumber}}</span>
+<span v-if="playerHighlightPara.rank_change == 0" class="ranking-change" style="color: #999; margin-left: 6px;">{{playerHighlightPara.rank_change | toPosNumber}}</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="home-rank-right">
+<table class="home-rank-table tblRankingLanding">
+<thead>
+<tr><th colspan="3">{{ $t('MS WH1 Top 10') }}</th></tr>
+</thead>
+<tbody>
+<tr v-for="(player, index) in rankParaData">
+
+<td class="col-country">
+<div v-if="player.player1_model" class="country">
+<img v-if="player.player1_model.country_model" width="48" v-bind:src="extranetUrl + '/docs/flags-svg/' + player.player1_model.country_model.flag_name_svg" v-bind:title="player.player1_model.country_model.name">
+</div>
+</td>
+
+<td class="col-rank">
+<div class="col-rank-wrapper">
+<span class="rank-value">{{player.rank}}</span>
+</div>
+</td>
+
+<td class="col-player">
+<div class="player">
+<span v-if="player.player1_model">
+<a v-bind:href="siteUrl + '/player/' + player.player1_model.id + '/' + player.player1_model.slug + '/'">
+<span v-html="player.player1_model.name_display_bold"></span>
+</a>
+</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div> </section>
+
+<section class="home-video container-fullwidth">
+<div class="container-sitewidth">
+<div v-if="videos.length > 0" class="video-wrap" style="display:none;">
+
+<div v-for="video in videos" class="video-outer">
+<a v-bind:href="'https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId" target="_blank">
+
+<div class="video-card-image">
+<img class="card-img-top" :src="video.snippet.thumbnails.medium.url" alt="YouTube thumbnail">
+</div>
+
+<div class="video-card-body">
+<h5 class="video-card-title">{{ video.snippet.title }}</h5>
+<h6 class="video-card-date">{{ video.snippet.channelTitle }} | {{ video.snippet.publishedAt | toDateYoutube }}</h6>
+
+</div>
+</a>
+</div>
+</div>
+<div class="yt__inner">
+<div class="yt__logo">
+<a href="http://badmintonworld.tv/" target="_blank">
+<img src="https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/images/bwftv_logo-01.svg" alt="bwftv_logo-01">
+</a>
+</div>
+<h3>
+<a href="http://badmintonworld.tv/" target="_blank">{{ $t('ALL VIDEO HIGHLIGHTS') }}</a>
+</h3>
+</div>
+</div> </section>
+</template>
+</v-app>
+</div>
+
+<div class="partners-section-wrap">
+<section id="partner" class="partners-section">
+<div class="partners-section_wrapper">
+<div class="owl-carousel owl-partners" id="owl-partners">
+
+
+<div class="item">
+<a href="https://www.hsbc.com" title="HSBC" target="_blank">
+<img alt="HSBC" src="https://extranet.bwfbadminton.com/docs/partner-logos/HSBC_Corporate-01.svg">
+</a>
 </div>
 
 
-                    </div>
 
-    </section>
-
-									</footer>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</main>
-		</div>
-	</div>
+<div class="item">
+<a href="https://www.total.com/" title="Total" target="_blank">
+<img alt="Total" src="https://extranet.bwfbadminton.com/docs/partner-logos/partner_total_2021_small.png">
+</a>
 </div>
-  </div>
 
-          
-        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/86705","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"classy\/base,classy\/messages,core\/normalize,datalayer\/ajax,datalayer\/behaviors,dsu_c_core\/general,dsu_c_extend_component\/general,dsu_c_image\/general,dsu_c_sideimagetext\/general,dsu_c_text\/general,dsu_product\/dsu-product,dsu_ratings_reviews\/dsu-event-tracking,extlink\/drupal.extlink,gigya\/drupalGigya,gigya_raas\/gigyaRaas,ln_datalayer\/ajax,ln_datalayer\/events,maggi\/global-css,maggi\/global-js,maggi\/modernizr-maggi,maggi_form_validations\/maggi-social-share,newnestlegermany_components_image\/general,newnestlegermany_components_sideimagetext\/general,newnestlegermany_social_share\/social-share,nodeviewcount\/nodeviewcount.base,paragraphs\/drupal.paragraphs.unpublished,system\/base","theme":"maggi","theme_token":null},"ajaxTrustedUrl":[],"dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":0}}},"gigya":{"globalParameters":{"bypassCookiePolicy":"never","enabledProviders":"*","sessionExpiration":180,"rememberSessionExpiration":null},"apiKey":"3_-OR1oJYHfAEgaWv3pMMpp0YjJKvZ5am9XHCqHQKCjRxNsIPZZvHkz66KzgCiPxLB","dataCenter":"us1.gigya.com","lang":"en","enableRaaS":true,"raas":{"login":{"screenSet":"maggi.globaltemplate.nestle.in-1-RegistrationLogin","mobileScreenSet":"","startScreen":"gigya-login-screen","sessionExpiration":180,"rememberSessionExpiration":null},"register":{"screenSet":"maggi.globaltemplate.nestle.in-1-RegistrationLogin","mobileScreenSet":"","startScreen":"gigya-register-screen","sessionExpiration":180,"rememberSessionExpiration":null},"customScreenSets":[]}},"gigyaExtra":{"loginRedirect":"\/","logoutRedirect":"\/logout-success","isLogin":false,"session_type":"fixed","session_time":180,"remember_me_session_time":180},"ln_datalayer":{"vars":{"module_name":"ln_datalayer","module_version":"2.1.0"}},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":true,"extClass":"0","extLabel":"(Link ist extern)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"Dieser Link f\u00fchrt Sie zu einer externen Website. Wir sind nicht f\u00fcr deren Inhalt verantwortlich.","mailtoClass":"0","mailtoLabel":"(Link zum E-Mailversand)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"nodeviewcount":{"url":"\/nodeviewcount\/updateCounter","data":{"86705":{"nid":"86705","uid":0,"uip":"2a03:2880:31ff:3::face:b00c","view_mode":"full"}}},"newnestlegermany_social_share":{"networks":{"services":["facebook","twitter","pinterest","whatsapp"],"settings":{"pubid_desktop":null,"pubid_mobile":null,"active":null,"desktop_theme":null,"desktop_position":null,"enable_desktop":null,"enable_mobile":null,"mobile_theme":null,"mobile_position":null,"api":null,"is_mobile":"desktop"}}},"ajax":[],"user":{"uid":0,"permissionsHash":"754f60c20cea052b45b61fd9e1f69a2d7124981a419788127dab4be0a60d2880"}}</script>
-<script src="/sites/default/files/js/js_YqhXH0KOSUg_ScqXgx-ItKarEMSpRK1hEWZFa48Jpl4.js"></script>
-<script src="/themes/custom/maggi/js/modernizr.min.js?v=3.11.7"></script>
-<script src="/sites/default/files/js/js_XX6ZKH8LJOPDuXk9wOmfBXo3iG69pa0NeTU83dK48cA.js"></script>
 
-          <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-a6706952ebb4695212a","applicationID":"838612098","transactionName":"YQFQNxFSDxFYAhZYVlhLcwAXWg4MFiUQRElXCG4NDFcEPnoODEVLWQheBhFvLw1dBDRYXEEnXQ0XQQ4OVQQQHAdADVcU","queueTime":0,"applicationTime":291,"atts":"TUZTQVlIHB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
-          </html>
 
+<div class="item">
+<a href="http://www.laymauchina.com/" title="Laymau" target="_blank">
+<img alt="Laymau" src="https://extranet.bwfbadminton.com/docs/partner-logos/laym.png">
+</a>
+</div>
+
+
+
+<div class="item">
+<a href="https://www.m88.com/" title="Mansion88" target="_blank">
+<img alt="Mansion88" src="https://extranet.bwfbadminton.com/docs/partner-logos/New Project.png">
+ </a>
+</div>
+
+
+
+<div class="item">
+<a href="http://www.yonex.com/" title="Yonex" target="_blank">
+<img alt="Yonex" src="https://extranet.bwfbadminton.com/docs/partner-logos/yonex-01.svg">
+</a>
+</div>
+
+
+
+<div class="item">
+<a href="https://www.victorsport.com/" title="Victor" target="_blank">
+<img alt="Victor" src="https://extranet.bwfbadminton.com/docs/partner-logos/VICTOR LOGO.svg">
+</a>
+</div>
+
+
+
+<div class="item">
+<a href="https://en.lining.com/" title="Laymau - Li-Ning" target="_blank">
+<img alt="Laymau - Li-Ning" src="https://extranet.bwfbadminton.com/docs/partner-logos/lin _1_.png">
+</a>
+</div>
+
+
+
+<div class="item">
+<a href="http://www.badmintonphoto.com/" title="Badmington Photo" target="_blank">
+<img alt="Badmington Photo" src="https://extranet.bwfbadminton.com/docs/partner-logos/bptoho.png">
+</a>
+</div>
+
+
+
+<div class="item">
+<a href="https://www.infront.sport/" title="InFront" target="_blank">
+<img alt="InFront" src="https://extranet.bwfbadminton.com/docs/partner-logos/inFront-01.svg">
+</a>
+</div>
+
+</div>
+<div class="title">PARTNERS</div>
+<script>
+
+    var $j = jQuery.noConflict();
+
+    $j(document).ready(function () {
+
+        // Get max partner logos.
+        let partnersCount = 9;
+        let logoCount = 0;
+        let logoCountMid = 0;
+
+        if (partnersCount >= 4) {
+            logoCount = 4;
+            logoCountMid = 3;
+        } else {
+            logoCount = partnersCount;
+            logoCountMid = 2;
+        }
+
+        $j(".owl-partners").owlCarousel({
+            loop: true,
+            dots: false,
+            nav: false,
+            responsiveClass: true,
+            responsiveRefreshRate: "50ms",
+            responsive: {
+                0: {
+                    items: 1,
+                    loop: true,
+                    autoplay: true,
+                    autoplayHoverPause: true,
+                    autoplayTimeout: 7e3
+                },
+                600: {
+                    items: logoCountMid,
+                    loop: true,
+                    autoplay: true,
+                    autoplayHoverPause: true,
+                    autoplayTimeout: 7e3
+                },
+                980: {
+                    items: logoCount,
+                    loop: true,
+                    autoplay: true,
+                    autoplayHoverPause: true,
+                    autoplayTimeout: 7e3
+                }
+            }
+        });
+    });
+
+</script> </div>
+</section>
+</div>
+<div class="site-footer" role="contentinfo">
+<footer class="master">
+<nav class="footer-navigation">
+<div class="footer-columns">
+
+<div class="footer-widget quick-link">
+<h2 class="widget-title">QUICK LINKS</h2>
+<ul id="menu-quick-links" class="footer-nav_list list-unstyled"><li id="menu-item-33579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-39 current_page_item menu-item-33579 menu-item-bwfbadminton.com first-menu-item"><a href="https://bwfbadminton.com/" aria-current="page">Home</a></li>
+<li id="menu-item-33580" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33580 menu-item-rankings "><a href="https://bwfbadminton.com/rankings/">Rankings</a></li>
+<li id="menu-item-33955" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33955 menu-item-calendar "><a href="https://bwfbadminton.com/calendar/">Calendar</a></li>
+<li id="menu-item-33956" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33956 menu-item-players "><a href="https://bwfbadminton.com/players/">Players</a></li>
+<li id="menu-item-33582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33582 menu-item-news "><a href="https://bwfbadminton.com/news/">News &#038; Media</a></li>
+<li id="menu-item-34135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34135 menu-item-match-centre-2 "><a target="_blank" rel="noopener" href="https://match-centre.bwfbadminton.com">Match Centre</a></li>
+<li id="menu-item-33713" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33713 menu-item-newsletter-signup last-menu-item"><a target="_blank" rel="noopener" href="https://bwfbadminton.us12.list-manage.com/subscribe?u=73460b7def03b0639c64e732c&#038;id=092d7e95a1">Newsletter Signup</a></li>
+</ul> </div>
+
+<div class="footer-widget platform-links">
+<h2 class="widget-title">PLATFORMS</h2>
+<ul id="menu-platforms" class="footer-nav_list list-unstyled"><li id="menu-item-33585" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33585 menu-item-facebook first-menu-item"><a target="_blank" rel="noopener" href="https://corporate.bwfbadminton.com/">BWF CORPORATE</a></li>
+<li id="menu-item-33586" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33586 menu-item-twitter "><a target="_blank" rel="noopener" href="https://bwfworldtour.bwfbadminton.com/">HSBC BWF WORLD TOUR</a></li>
+<li id="menu-item-33587" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33587 menu-item-qq "><a target="_blank" rel="noopener" href="https://bwfworldtourfinals.bwfbadminton.com/">HSBC BWF WORLD TOUR FINALS</a></li>
+<li id="menu-item-33588" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33588 menu-item-weibo "><a target="_blank" rel="noopener" href="http://BADMINTONWORLD.TV">BADMINTONWORLD.TV</a></li>
+<li id="menu-item-33589" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33589 menu-item-youku "><a target="_blank" rel="noopener" href="https://bwfthomasubercups.bwfbadminton.com/">TotalEnergies BWF THOMAS &#038; UBER CUP FINALS</a></li>
+<li id="menu-item-33590" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33590 menu-item-youtube "><a target="_blank" rel="noopener" href="https://bwfworldchampionships.bwfbadminton.com/">TotalEnergies BWF WORLD CHAMPIONSHIPS</a></li>
+<li id="menu-item-33591" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33591 menu-item-sound-cloud "><a target="_blank" rel="noopener" href="https://bwfsudirmancup.bwfbadminton.com/">TotalEnergies BWF SUDIRMAN CUP</a></li>
+<li id="menu-item-34089" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34089 menu-item-tokyo-2020-olympics "><a href="https://olympics.bwfbadminton.com/">TOKYO 2020 OLYMPICS</a></li>
+<li id="menu-item-34090" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34090 menu-item-development "><a href="https://development.bwfbadminton.com/">DEVELOPMENT</a></li>
+<li id="menu-item-34091" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34091 menu-item-shuttle-time last-menu-item"><a href="https://shuttletime.bwfbadminton.com/">SHUTTLE TIME</a></li>
+</ul> 
+</div>
+
+<div class="footer-widget confederation-links">
+<h2 class="widget-title">CONFEDERATIONS</h2>
+<ul id="menu-confederation-links" class="footer-nav_list list-unstyled"><li id="menu-item-33574" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33574 menu-item-badminton-africa first-menu-item"><a target="_blank" rel="noopener" href="https://badmintonafrica.com">BADMINTON AFRICA</a></li>
+<li id="menu-item-33575" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33575 menu-item-badminton-asia "><a target="_blank" rel="noopener" href="http://www.badmintonasia.org">BADMINTON ASIA</a></li>
+<li id="menu-item-33576" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33576 menu-item-badminton-europe "><a target="_blank" rel="noopener" href="http://www.badmintoneurope.com">BADMINTON EUROPE</a></li>
+<li id="menu-item-33577" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33577 menu-item-badminton-oceania "><a target="_blank" rel="noopener" href="https://badmintonoceania.org">BADMINTON OCEANIA</a></li>
+<li id="menu-item-33578" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33578 menu-item-badminton-pan-am last-menu-item"><a target="_blank" rel="noopener" href="http://www.badmintonpanam.org">BADMINTON PAN AM</a></li>
+</ul> </div>
+
+<div class="footer-widget bwf-contact">
+<h2 class="widget-title">BWF HQ CONTACT</h2>
+<div class="widget-content">
+<p>UNIT No. 1, LEVEL 29<br>
+NAZA TOWER PLATINUM PARK <br>
+No. 10, PERSIARAN KLCC <br>
+50088 KUALA LUMPUR <br>
+MALAYSIA </p>
+<div class="mail-contact">
+For all enquiries <a href="https://corporate.bwfbadminton.com/about/office/"><span style="color:#DF2027;">click here</span></a>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+<div class="logo-footer">
+<img src="https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/images/bwf-logo-svg.svg">
+</div>
+<div class="info-footer">
+<div class="design-by">
+<a href="https://96digital.com/" target="_blank" rel="noopener">
+WEBSITE BY 96 DIGITAL </a>
+</div>
+<div class="link">
+<a href="https://bwfbadminton.com/terms-conditions/">
+TERMS &amp; CONDITIONS</a> |
+<a href="https://bwfbadminton.com/terms-conditions/#privacy-policy">
+PRIVACY POLICY</a> |
+<a href="https://bwfbadminton.com/terms-conditions/#cookie-policy">
+COOKIE POLICY </a>
+</div>
+</div>
+
+<div class="copyright">
+© Copyright 2021 Badminton World Federation. All rights reserved. The content of this website is the property of BWF or used under licence by BWF. No part may be copied, republished, stored, or otherwise republished or transmitted without the prior written permission of BWF. For further information, please refer to our <a href="https://bwfbadminton.com/terms-conditions/">Terms & Conditions.</a>
+</div>
+</nav>
+</footer>
+</div>
+<script language="JavaScript">
+    var bwffs_url = '';
+
+    function get_bwffs_url() {
+        return bwffs_url;
+    }
+</script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1' id='hoverIntent-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/jquery.countdown-2.2.0/jquery.countdown.js?ver=0.58.7' id='bwf-countdown-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/jquery/ui/menu.min.js?ver=1.12.1' id='jquery-ui-menu-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>
+( 'fetch' in window ) || document.write( '<script src="https://bwfbadminton.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://bwfbadminton.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://bwfbadminton.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://bwfbadminton.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://bwfbadminton.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://bwfbadminton.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );( 'objectFit' in document.documentElement.style ) || document.write( '<script src="https://bwfbadminton.com/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js?ver=2.3.4"></scr' + 'ipt>' );
+</script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/dist/dom-ready.min.js?ver=eb19f7980f0268577acb5c2da5457de3' id='wp-dom-ready-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/dist/hooks.min.js?ver=50e23bed88bcb9e6e14023e9961698c1' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/dist/i18n.min.js?ver=db9a9a37da262883343e941c3731bc67' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='wp-a11y-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/dist/a11y.min.js?ver=5e00de7a43b31bbb9eaf685f089a3903' id='wp-a11y-js'></script>
+<script type='text/javascript' id='jquery-ui-autocomplete-js-extra'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.12.1' id='jquery-ui-autocomplete-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/owl-carousel2/dist/owl.carousel.min.js?ver=0.58.7' id='owl-script-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/select2.min.js?ver=0.58.7' id='select2-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/main.js?ver=0.58.7' id='main-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/functions.js?ver=0.58.7' id='functions-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/libs/bwffs.js?ver=0.58.7' id='libs-bwffs-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/libs/ranking.js?ver=0.58.7' id='libs-ranking-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/libs/players-landing.js?ver=0.58.7' id='libs-players-landing-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/results.js?ver=0.58.7' id='results-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/players/players-landing.js?ver=0.58.7' id='players-landing-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/rankings.js?ver=0.58.7' id='rankings-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/grand-event.js?ver=0.58.7' id='grand-event-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/js/results-landing.js?ver=0.58.7' id='results-landing-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/themes/fansite-2020/assets/js/fancybox-master/dist/jquery.fancybox.min.js?ver=0.58.7' id='fancybox-js-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-includes/js/wp-embed.min.js?ver=1717160f66b565489b11f0a0e460e849' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/js/gsap-public-3.2.6/minified/gsap.min.js?ver=0.25' id='gsap-js'></script>
+<script type='text/javascript' src='https://bwfbadminton.com/wp-content/plugins/bwf-menu-system/js/bwf-menu-system.js?ver=0.25' id='bwf_menu_script-js'></script>
+
+
+
+
+<script>(function(){var js = "window['__CF$cv$params']={r:'73f356343a5c794d',m:'9eo.OU9KUElGg0gBtM0x4UgvEnRR44i8BrTDpSbRJWA-1661252345-0-AajGDwFOCe3Mwm90Dk8i3R77S9ep3cRvrKMQaTnFNg1rxjZpE76pTGK9xQG+QoZFAeKl6HGFwf7mz1z8vhGW100q0Vac+3bWIAgQwDBWY8Fi+AZj1upr5Rkq+aSoKJY1Jg==',s:[0xf6225b1849,0x4c8fd3b77d],u:'/cdn-cgi/challenge-platform/h/g'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/g/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"73f356343a5c794d","token":"1df603e8c147496b9cf81eef6d5d8e92","version":"2022.8.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
+<script type="text/javascript">
+
+    var $j = jQuery.noConflict();
+
+    $j(document).ready(function () {
+
+        // Add link to mobile menu logo.
+        var home_url = 'https://bwfbadminton.com';
+		$j('#responsive-menu-title-image img').wrap("<a href=" + home_url + "></a>");
+
+        // Set active menu item.
+        function setactivemenu() {
+            var siteLanguage = 'en_US';
+
+            // English create active menu link.
+            if (siteLanguage == 'en_US') {
+                var pathArray = window.location.pathname.split('/');
+
+                if (pathArray[1] == "news" || pathArray[1] == "news-single" || pathArray[1] == "news-tag") {
+                    $j("li#menu-news, li.menu-news").addClass("current-menu-item");
+                } else if (pathArray[1] == "live") {
+                    $j("li#menu-item-111, li.menu-item-111").addClass("current-menu-item");
+                } else if (pathArray[1] == "tournament") {
+                    $j("li#menu-calendar, li.menu-calendar").addClass("current-menu-item");
+                } else if (pathArray[1] == "results") {
+                    $j("li#menu-item-335, li.menu-item-335").addClass("current-menu-item");
+                } else if (pathArray[1] == "player" || pathArray[1] == "player-titles" || pathArray[1] == "h2h") {
+                    $j("li#menu-item-8, li.menu-item-8").addClass("current-menu-item");
+                }
+            }
+
+            // Chinese create active menu link.
+            if (siteLanguage == 'zh_CN') {
+                var pathArray = window.location.pathname.split('/');
+
+                if (pathArray[2] == "news" || pathArray[2] == "news-single" || pathArray[2] == "news-tag") {
+                    $j("li#menu-news, li.menu-news").addClass("current-menu-item");
+                } else if (pathArray[2] == "live") {
+                    $j("li#menu-item-182, li.menu-item-182").addClass("current-menu-item");
+                } else if (pathArray[2] == "tournament") {
+                    $j("li#menu-calendar, li.menu-calendar").addClass("current-menu-item");
+                } else if (pathArray[2] == "player" || pathArray[2] == "player-titles" || pathArray[2] == "h2h") {
+                    $j("li#menu-item-181, li.menu-item-181").addClass("current-menu-item");
+                }
+            }
+
+        }
+
+        // Display main nav menu only when page is loaded.
+        $j("#navigation").fadeIn('slow');
+
+        // Menu language link.
+        function setmenulink() {
+            var siteLanguage = 'en_US';
+
+            // English create menu link.
+            if (siteLanguage == 'en_US') {
+                var pathArray = window.location.pathname.split('/');
+                // console.log(pathArray);
+
+                // Redirect single news item to main news page.
+                if (pathArray[1] == 'news-single') {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/zh-cn/news';
+
+                // Redirect Guangzhou page.
+                } else if (pathArray[1] == 'guangzhou-en') {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/zh-cn/guangzhou-cn';
+
+                // Redirect tickets page.
+                } else if (pathArray[1] == 'tickets-en') {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/zh-cn/tickets-cn';
+
+                // Redirect history page.
+                } else if (pathArray[1] == 'history-en') {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/zh-cn/history-cn';
+
+                // Standard redirect.
+                } else {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/zh-cn' + window.location.pathname + window.location.search;
+                }
+            }
+
+            // Chinese create menu link.
+            if (siteLanguage == 'zh_CN') {
+                var pathArray = window.location.pathname.split('/');
+                // console.log(pathArray);
+
+                // Redirect single news item to main news page.
+                if (pathArray[2] == 'news-single') {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/news';
+
+                // Redirect Guangzhou page.
+                } else if (pathArray[2] == 'guangzhou-cn') {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/guangzhou-en';
+
+                // Redirect tickets page.
+                } else if (pathArray[2] == 'tickets-cn') {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/tickets-en';
+
+                // Redirect history page.
+                } else if (pathArray[2] == 'history-cn') {
+                    var newUrl = window.location.protocol + '//' + window.location.host + '/history-en';
+
+                // Standard redirect.
+                } else {
+                    var newPath = "";
+                    for (i = 2; i < pathArray.length; i++) {
+                        newPath += "/";
+                        newPath += pathArray[i];
+                    }
+                    var newUrl = window.location.protocol + '//' + window.location.host + newPath + window.location.search;
+                }
+            }
+
+            // Set a href link.
+            $j("li.menu-language a").attr("href", newUrl);
+            // console.log("New URL: " + newUrl);
+        }
+
+        // Set active menu link.
+        setactivemenu();
+        // Set language menu link.
+        setmenulink();
+
+    });  
+
+</script>
+<script>
+    // Ready translated locale messages
+    const messages = {
+        en: {},
+        cn: {
+            "BWF World Rankings": "世界羽联官方排名",
+            "Latest Stories": "最新故事",
+            "Schedule": "时间表",
+            "All Tournaments": "所有比赛",
+            "BWF World Rankings": "BWF世界排名",
+            "Video Highlights": "视频集锦",
+            "All Videos": "所有影片",
+            "View Results": "查看结果",
+            "Live Scores!": "现场比分！",
+            "View Draws": "查看抽奖",
+            "View Tournament": "查看比赛",
+            "Badminton": "羽毛球",
+            "Para Badminton": "残奥会羽毛球",
+            "Player": "播放器",
+            "Spotlight": "聚光灯",
+            "Featured": "精选",
+            "days": "天",
+            "hrs": "小时",
+            "min": "分钟",
+            "sec": "秒",
+        }
+    }
+
+    // Create VueI18n instance with options
+    const i18n = new VueI18n({
+        locale: 'en', // set locale
+        messages, // set locale messages
+    })
+
+    var app = new Vue({
+        el: '#app',
+        i18n,
+        vuetify: new Vuetify({
+            theme: {
+                themes: {
+                    light: {
+                        primary: '#333',
+                        secondary: '#b0bec5',
+                        accent: '#8c9eff',
+                        error: '#b71c1c',
+                    },
+                },
+            },
+        }),
+        data: {
+            extranetUrl: 'https://extranet.bwfbadminton.com',
+            extranetLvUrl: 'https://extranet-lv.bwfbadminton.com',
+            siteUrl: 'https://bwfbadminton.com',
+            activeTab: 1,
+            loading: false,
+            loadingRanking: false,
+            drawCount: '',
+            tmtNextLive: [],
+            tmtNext: [],
+            tmtPrevious: [],
+            rankAbleData: [],
+            rankParaData: [],
+            playerHighlightAble: [],
+            playerHighlightPara: [],
+            videos: [],
+            // youtubeApi: {
+            //     // baseUrl: 'https://www.googleapis.com/youtube/v3/search?',
+            //     // baseUrl: 'https://www.googleapis.com/youtube/v3/channels?',
+            //     baseUrl: 'https://www.googleapis.com/youtube/v3/playlistItems?',
+            //     // part: "snippet%2CcontentDetails%2Cstatistics",
+            //     part: "snippet",
+            //     type: 'video',
+            //     order: 'date',
+            //     maxResults: 4,
+            //     q: '',
+            //     userName: "bwf",
+            //     channelId: "UChh-akEbUM8_6ghGVnJd6cQ",
+            //     uploadsId: "UUhh-akEbUM8_6ghGVnJd6cQ",
+            //     key: "AIzaSyBrY3NDOE4qqa6jO3ie1bG0AfDZXJOV17I",
+            //     prevPageToken: '',
+            //     nextPageToken: ''
+            // },
+            token: "2|NaXRu9JnMpSdb8l86BkJxj6gzKJofnhmExwr8EWkQtHoattDAGimsSYhpM22a61e1crjTjfIGTKfhzxA"
+        },
+        methods: {
+            getTmtSchedule() {
+                this.loading = true;
+                this.drawCount++;
+                axios({
+                        url: this.extranetLvUrl + '/api/vue-tmt-schedule',
+                        method: 'post',
+                        headers: {
+                            'Authorization': `Bearer ${this.token}`
+                        },
+                        data: {
+                            drawCount: this.drawCount,
+                        }
+                    })
+                    .then(response => {
+                        this.tmtNextLive = response.data.nextLive;
+                        this.tmtPrevious = response.data.previousTmt;
+                        this.tmtNext = response.data.nextTmt;
+                        this.loading = false;
+                    })
+                    .catch(errors => {
+                        console.log('Tmt Schedule errors: ', errors);
+                    });
+            },
+            getRanking() {
+                this.loadingRanking = true;
+                this.drawCount++;
+                axios({
+                        url: this.extranetLvUrl + '/api/vue-home-ranking',
+                        method: 'post',
+                        headers: {
+                            'Authorization': `Bearer ${this.token}`
+                        },
+                        data: {
+                            drawCount: this.drawCount,
+                        }
+                    })
+                    .then(response => {
+                        this.rankAbleData = response.data.ableData;
+                        this.rankParaData = response.data.paraData;
+                        this.playerHighlightAble = response.data.ablePlayer;
+                        this.playerHighlightPara = response.data.paraPlayer;
+                        this.loadingRanking = false;
+                    })
+                    .catch(errors => {
+                        console.log('Rank data errors: ', errors);
+                    });
+            },
+            videoSearch(searchParams) {
+                const {
+                    baseUrl,
+                    part,
+                    type,
+                    order,
+                    maxResults,
+                    q,
+                    userName,
+                    channelId,
+                    uploadsId,
+                    key
+                } = this.youtubeApi;
+
+                const apiUrl = `${baseUrl}playlistId=${uploadsId}&part=${part}&type=${type}&maxResults=${maxResults}&order=${order}&key=${key}`;
+                // const apiUrl = `${baseUrl}id=${channelId}&part=${part}&type=${type}&maxResults=${maxResults}&order=${order}&key=${key}`;
+                // const apiUrl = `${baseUrl}part=${part}&forUsername=${userName}&maxResults=${maxResults}&key=${key}`;
+                // console.log("API URL: ", apiUrl);
+                this.getYouTubeApi(apiUrl);
+            },
+            getYouTubeApi(apiUrl) {
+                axios
+                    .get(apiUrl)
+                    .then(res => {
+                        this.videos = res.data.items;
+                        console.log("YouTube Videos: ", this.videos);
+                        // this.api.prevPageToken = res.data.prevPageToken;
+                        // this.api.nextPageToken = res.data.nextPageToken;
+                    })
+                    .catch(error => console.log("YouTube API errors: ", error));
+            },
+            setLanguage() {
+                let siteLanguage = 'en_US';
+                // console.log("Language: ", siteLanguage);
+                if (siteLanguage == "zh_CN") {
+                    i18n.locale = 'cn';
+                }
+            }
+        },
+        filters: {
+            formatQualification(value) {
+                if (value == 999) {
+                    return '-';
+                } else {
+                    return value;
+                }
+            },
+            toCurrency(value) {
+                return '$' + Number(value).toLocaleString();
+            },
+            toInteger(value) {
+                return Math.round(value).toLocaleString();
+            },
+            toNumber(value) {
+                return Number(value).toLocaleString();
+            },
+            toPosNumber(value) {
+                if (value == 0) {
+                    return '-';
+                } else {
+                    return Math.abs(value);
+                }
+            },
+            toDate(value) {
+                let date = new Date(value.replace(/-/g, "/"));
+                let dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000))
+                    .toISOString()
+                    .split("T")[0];
+                return dateString;
+            },
+            toDateYoutube(value) {
+                let date = new Date(value);
+                // console.log("YT Date: ", date);
+                return date.toISOString().split("T")[0];
+            },
+        },
+        created() {
+            this.setLanguage();
+            this.getTmtSchedule();
+            this.getRanking();
+            // this.videoSearch();
+        }
+    });
+</script>
+<script>
+
+    var $j = jQuery.noConflict();
+
+    $j(document).ready(function() {
+
+        let startDate = '';
+
+        // Countdown script.
+        $j('#counter-day-value').countdown(startDate, function(event) {
+            $j(this).html(event.strftime('%D'));
+        });
+        $j('#counter-hour-value').countdown(startDate, function(event) {
+            $j(this).html(event.strftime('%H'));
+        });
+        $j('#counter-minute-value').countdown(startDate, function(event) {
+            $j(this).html(event.strftime('%M'));
+        });
+        $j('#counter-second-value').countdown(startDate, function(event) {
+            $j(this).html(event.strftime('%S'));
+        });
+        
+        setTimeout(() => {
+            $j(".owl-schedule").owlCarousel({
+                stagePadding: 0,
+                dots: false,
+                nav: false,
+                items: 1,
+                rewind:true,
+                margin:19,
+                autoplay: true,
+                autoplayHoverPause: true,
+                autoplayTimeout: 7e3
+            });
+        }, 100);
+    });
+
+    
+
+</script>
